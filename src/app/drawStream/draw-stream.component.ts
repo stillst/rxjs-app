@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Observable, Subscription, interval, merge } from 'rxjs';
-import { findIndex, has } from 'ramda';
+import { findIndex, has, propEq } from 'ramda';
 import { Stream } from '../app.interface';
 
 @Component({
@@ -17,15 +17,15 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     this.streams.forEach((stream: Stream) => {
       stream.stream.subscribe(streamValue => {
 
-        let index = findIndex(has(stream.name))(this.streamsValues);
+        let index = findIndex(propEq('name', stream.name))(this.streamsValues);
 
         if (index === -1) {
-          this.streamsValues.push({[stream.name]: []});
+          this.streamsValues.push({ name: stream.name, values: []  });
         }
 
-        index = findIndex(has(stream.name))(this.streamsValues);
+        index = findIndex(propEq('name', stream.name))(this.streamsValues);
 
-        this.streamsValues[index][stream.name].push(streamValue);
+        this.streamsValues[index]['values'].push(streamValue);
 
         console.log('streamsValues', this.streamsValues);
       });
