@@ -1,0 +1,6 @@
+ul.streams
+  li.stream__item(*ngFor="let streamValue of streamsValues")
+    div(*ngFor="let val of streamValue | keyvalue")
+      p {{ val.key }}
+      ul
+        li(*ngFor="let last of val.value") {{ last.val }}
