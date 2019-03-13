@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription, interval, merge as rxMerge } from 'rxjs';
+import { Observable, Subscription, interval, merge as rxMerge, of } from 'rxjs';
 import { mergeRight, length } from 'ramda';
 import { map } from 'rxjs/operators';
 import { Stream, StreamValueShape, StreamValueColor } from '../app.interface';
@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   interval1$: Observable<number> = interval(1000);
   interval2$: Observable<number> = interval(2000);
   interval3$: Observable<number> = interval(3000);
+  of: Observable<number> = of(1234);
   mergeStream$: Observable<number>;
 
   streams: Stream[];
@@ -61,6 +62,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.streams = [ { name: 'interval 1', values: this.randomizeStreamValuesView(this.interval1$) },
       { name: 'interval 2', values: this.randomizeStreamValuesView(this.interval2$) },
       { name: 'interval 3', values: this.randomizeStreamValuesView(this.interval3$) },
+      { name: 'of 1', values: this.randomizeStreamValuesView(this.of) }
     ];
   }
 
@@ -74,9 +76,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     return shapes[this.getRandomNumber(0, length(shapes) - 1)];
   }
 
-
   get randomColor(): StreamValueColor {
-    return colors[this.getRandomNumber(0, length(colors) -1 )];
+    return colors[this.getRandomNumber(0, length(colors) - 1)];
   }
 
   /**

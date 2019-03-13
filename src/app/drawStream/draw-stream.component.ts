@@ -19,13 +19,18 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subctiption = this.stream.values.subscribe(streamValue => {
-      if (length(this.values) > this.numMaxValues) {
-        this.values = dropLast(1, this.values);
-      }
-      this.values = prepend(streamValue, this.values);
-      console.log(streamValue);
-    });
+    this.subctiption = this.stream.values.subscribe(
+      streamValue => {
+        if (length(this.values) > this.numMaxValues) {
+          this.values = dropLast(1, this.values);
+        }
+        this.values = prepend(streamValue, this.values);
+        console.log(streamValue);
+      }, error => {
+        console.log(error, 'error');
+      }, () => {
+        this.values = prepend({ val: 'completed', shape: 'cross', color: 'red' }, this.values);
+      });
   }
 
   ngOnDestroy(): void {
