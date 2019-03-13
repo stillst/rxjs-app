@@ -1,5 +1,5 @@
-ul.streams
-  li.stream(*ngFor="let streamValue of streamsValues")
-    p.stream__name {{ streamValue.name }}
-    ul.stream__values
-      li.stream__value(*ngFor="let value of streamValue.values") {{ value.val }}
+.stream
+  .stream__name {{ stream.name }}
+  ul.stream__values
+    li.stream__value-wrap(*ngFor="let value of values")
+      span.stream__value([ngClass]="[value.shape, value.color]") {{ value.val }}

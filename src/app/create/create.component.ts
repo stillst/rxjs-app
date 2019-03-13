@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval, merge as rxMerge } from 'rxjs';
-import { mergeRight } from 'ramda';
+import { mergeRight, length } from 'ramda';
 import { map } from 'rxjs/operators';
-import { Stream } from '../app.interface';
-
+import { Stream, StreamValueShape, StreamValueColor } from '../app.interface';
+import { shapes, colors } from '../app.constant';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.pug',
@@ -20,6 +20,14 @@ export class CreateComponent implements OnInit, OnDestroy {
   interval2Subscription: Subscription;
   interval3Subscription: Subscription;
   mergeSubscription: Subscription;
+
+  active = true;
+
+  toogle() {
+    this.active = !this.active;
+    console.log(this.active, 'this.active');
+  }
+
 
   constructor() {
 
@@ -50,16 +58,32 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
 
   createStreams() {
-    this.streams = [ { name: 'interval 1', stream: this.randomizeStream(this.interval1$) },
-      { name: 'interval 2', stream: this.randomizeStream(this.interval2$) },
-      { name: 'interval 3', stream: this.randomizeStream(this.interval3$) },
+    this.streams = [ { name: 'interval 1', values: this.randomizeStreamValuesView(this.interval1$) },
+      { name: 'interval 2', values: this.randomizeStreamValuesView(this.interval2$) },
+      { name: 'interval 3', values: this.randomizeStreamValuesView(this.interval3$) },
     ];
   }
 
-  randomizeStream(stream: Observable<any>) {
+  randomizeStreamValuesView(stream: Observable<any>) {
     return stream.pipe(
-      map(val => mergeRight({shape: 'round', color: 'yellow' }, { val: val } ))
+      map(val => mergeRight({shape: this.randomShape, color: this.randomColor }, { val: val } ))
     );
+  }
+
+  get randomShape(): StreamValueShape {
+    return shapes[this.getRandomNumber(0, length(shapes) - 1)];
+  }
+
+
+  get randomColor(): StreamValueColor {
+    return colors[this.getRandomNumber(0, length(colors) -1 )];
+  }
+
+  /**
+   * Returns a random number between min and max
+   */
+  getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   ngOnInit() {

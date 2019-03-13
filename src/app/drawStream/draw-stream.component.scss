@@ -1,29 +1,102 @@
 :host {
   width: 100%;
 }
-.streams {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
 
 .stream {
+  display: flex;
+  align-items: center;
 
   .stream__name {
-    display: flex;
-    justify-content: flex-start;
+    margin-right: 10px;
+    padding: 10px 0;
   }
+
   .stream__values {
     display: flex;
     list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    align-items: center;
 
-  .stream__value {
-    margin: 10px;
+    .stream__value-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+    }
+
+    .stream__value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      color: #fff;
+    }
+
+    .red {
+      background-color: var(--red, #e74c3c);
+    }
+
+    .green {
+      background-color: var(--green, #16a085);
+    }
+
+    .blue {
+      background-color: var(--blue, #2980b9);
+    }
+
+    .black {
+      background-color: #000;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .triangle {
+      position: relative;
+      display: flex;
+      background: transparent;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-style: solid;
+        border-width: 25px 14px 0px 13px;
+        height: 0px;
+        width: 0px;
+        z-index: -1;
+      }
+    }
+
+    .triangle.red {
+      &:after {
+        border-color: var(--red, #e74c3c) transparent;
+        background: transparent;
+      }
+    }
+
+    .triangle.black {
+      &:after {
+        border-color: #000 transparent;
+        background: transparent;
+      }
+    }
+
+    .triangle.blue {
+      &:after {
+        border-color: var(--blue, #2980b9)  transparent;
+        background: transparent;
+      }
+    }
+
+    .triangle.green {
+      &:after {
+        border-color: var(--green, #16a085) transparent;
+        background: transparent;
+      }
+    }
   }
 }

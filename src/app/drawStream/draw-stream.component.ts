@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { Observable, Subscription, interval, merge } from 'rxjs';
-import { findIndex, has, propEq } from 'ramda';
+import { Subscription } from 'rxjs';
+import { prepend, length, dropLast } from 'ramda';
 import { Stream } from '../app.interface';
 
 @Component({
@@ -9,29 +9,26 @@ import { Stream } from '../app.interface';
   styleUrls: ['./draw-stream.component.scss']
 })
 export class DrawStreamComponent implements OnInit, OnDestroy {
-  @Input() streams: Stream[];
-  streamsValues = [];
-  subctiptions = {};
+  @Input() stream: Stream;
+  values: any[] = [];
+  name: string;
+  subctiption: Subscription;
 
-  ngOnInit() {
-    this.streams.forEach((stream: Stream) => {
-      stream.stream.subscribe(streamValue => {
+  get numMaxValues(): number {
+    return this.stream.numMaxValues || 50;
+  }
 
-        let index = findIndex(propEq('name', stream.name))(this.streamsValues);
-
-        if (index === -1) {
-          this.streamsValues.push({ name: stream.name, values: []  });
-        }
-
-        index = findIndex(propEq('name', stream.name))(this.streamsValues);
-
-        this.streamsValues[index]['values'].push(streamValue);
-
-        console.log('streamsValues', this.streamsValues);
-      });
+  ngOnInit(): void {
+    this.subctiption = this.stream.values.subscribe(streamValue => {
+      if (length(this.values) > this.numMaxValues) {
+        this.values = dropLast(1, this.values);
+      }
+      this.values = prepend(streamValue, this.values);
+      console.log(streamValue);
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
+    this.subctiption.unsubscribe();
   }
 }
