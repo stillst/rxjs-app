@@ -1,0 +1,48 @@
+:host {
+  position: fixed;
+  width: 200px;
+  max-width: 20%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 25px;
+
+  border: 1px solid #000;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  svg {
+    width: 50px;
+  }
+}
+
+.page-list {
+  list-style: none;
+
+  .page-list__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-list__group-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .page-list__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+}

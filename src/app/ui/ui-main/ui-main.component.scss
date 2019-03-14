@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  position: relative;
+  left: 200px;
+  width: calc(100% - 200px);
+  border: 1px solid red;
+  padding: 25px;
+}
+
+.main {
+  width: 100%;
+  min-height: 500px;
+}
