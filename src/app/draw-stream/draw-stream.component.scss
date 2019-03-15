@@ -4,17 +4,36 @@
 
 .stream {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  margin-bottom: 10px;
 
-  .stream__name {
-    flex: 1;
-    padding: 10px 0;
+  border: 1px solid #000;
+
+  .stream__info {
+    display: flex;
+    align-items: center;
+
+    * {
+      margin-right: 10px;
+    }
+  }
+
+  .stream__extra {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .stream__toogle {
+    cursor: pointer;
+    padding: 2px;
   }
 
   .stream__values {
     position: relative;
     display: flex;
-    flex: 9;
     list-style: none;
     align-items: center;
     margin: 0;
@@ -28,7 +47,7 @@
       height: 2px;
       background-color: #000;
       top: 50%;
-      transform: translate(-15px, -50%);
+      transform: translate(20px, -50%);
       left: 0;
     }
 
@@ -38,7 +57,7 @@
       position: absolute;
       width: 0;
       height: 0;
-      right: 0;
+      right: -20px;
       top: 0;
 
       border-top: 15px solid transparent;
@@ -59,7 +78,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 25px;
+      min-width: 25px;
       height: 25px;
       color: #fff;
     }
@@ -90,6 +109,7 @@
       width: 1px;
       height: 1px;
       margin-right: 20px;
+      min-width: 0px;
 
       &:before {
         content: "";
@@ -112,6 +132,14 @@
         height: 30px;
         background-color: red;
       }
+    }
+
+    .block {
+      width: 5px;
+      min-width: 5px;
+      height: 25px;
+      font-size: 0;
+      background-color: #000;
     }
   }
 }

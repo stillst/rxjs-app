@@ -10,6 +10,8 @@ import { UiMainComponent } from './ui/ui-main/ui-main.component';
 import { CommonModule } from '@angular/common';
 
 import { IntervalComponent } from './pages/interval/interval.component';
+import { FromComponent } from './pages/from/from.component';
+import { OfComponent } from './pages/of/of.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { IntervalComponent } from './pages/interval/interval.component';
     UiSideBarComponent,
     UiMainComponent,
     IntervalComponent,
+    FromComponent,
+    OfComponent,
   ],
   imports: [
     CommonModule,

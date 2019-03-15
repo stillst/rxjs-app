@@ -1,8 +1,10 @@
 import { Observable } from 'rxjs';
 
 export interface Stream {
-  name: string;
   values: Observable<any>;
+  name?: string;
+  code?: string;
+  description?: string;
   numMaxValues?: number;
 }
 
