@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CreateComponent } from './create/create.component';
+import { CreatesComponent } from './create/create.component';
 import { pagesRoutes } from './pages/pages.routing';
 
 const routes: Routes = [
-  { path: 'test', component: CreateComponent },
+  { path: 'test', component: CreatesComponent },
   ...pagesRoutes,
 ];
 

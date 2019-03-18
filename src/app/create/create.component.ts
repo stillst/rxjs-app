@@ -5,11 +5,11 @@ import { map } from 'rxjs/operators';
 import { Stream, StreamValueShape, StreamValueColor } from '../pages/app.interface';
 import { shapes, colors } from '../pages/app.constant';
 @Component({
-  selector: 'app-create',
+  selector: 'app-creates',
   templateUrl: './create.component.pug',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent implements OnInit, OnDestroy {
+export class CreatesComponent implements OnInit, OnDestroy {
   interval1$: Observable<number> = interval(1000);
   interval2$: Observable<number> = interval(2000);
   interval3$: Observable<number> = interval(3000);

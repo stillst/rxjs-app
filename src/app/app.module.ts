@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateComponent } from './create/create.component';
+import { CreatesComponent } from './create/create.component';
 import { UiSideBarComponent } from './ui/ui-side-bar/ui-side-bar.component';
 import { UiMainComponent } from './ui/ui-main/ui-main.component';
 import { PagesModule } from './pages/pages.module';
@@ -12,7 +12,7 @@ import { PagesModule } from './pages/pages.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
+    CreatesComponent,
     UiSideBarComponent,
     UiMainComponent,
   ],

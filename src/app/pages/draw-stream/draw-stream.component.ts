@@ -36,6 +36,12 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
       });
   }
 
+  showVal(val: any): string {
+    return (typeof(val) === 'object' || typeof(val) === 'function')
+      ? typeof(val)
+      : val;
+  }
+
   ngOnDestroy(): void {
     this.subctiption.unsubscribe();
   }
