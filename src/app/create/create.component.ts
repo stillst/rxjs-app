@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription, interval, merge as rxMerge, of } from 'rxjs';
 import { mergeRight, length } from 'ramda';
 import { map } from 'rxjs/operators';
-import { Stream, StreamValueShape, StreamValueColor } from '../app.interface';
-import { shapes, colors } from '../app.constant';
+import { Stream, StreamValueShape, StreamValueColor } from '../pages/app.interface';
+import { shapes, colors } from '../pages/app.constant';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.pug',

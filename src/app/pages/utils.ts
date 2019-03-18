@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { mergeRight, length } from 'ramda';
-import { StreamValueShape, StreamValueColor } from '../app.interface';
-import { shapes, colors } from '../app.constant';
+import { StreamValueShape, StreamValueColor } from './app.interface';
+import { shapes, colors } from './app.constant';
 
 export function getStreamObj(values: Observable<any>, code: string, description: string) {
   return {

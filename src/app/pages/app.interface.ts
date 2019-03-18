@@ -9,5 +9,4 @@ export interface Stream {
 }
 
 export type StreamValueShape = 'circle' | 'square';
-
 export type StreamValueColor = 'red' | 'green' | 'blue' | 'black';

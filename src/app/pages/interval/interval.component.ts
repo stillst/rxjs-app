@@ -1,14 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { Stream,  } from '../../app.interface';
-import { getStreamObj } from '../../utils/utils';
+import { Stream,  } from '../app.interface';
+import { getStreamObj } from '../utils';
 
 @Component({
   selector: 'app-interval',
   templateUrl: './interval.component.pug',
   styleUrls: ['./interval.component.scss']
 })
-export class IntervalComponent implements OnInit, OnDestroy {
+export class IntervalComponent implements OnInit {
 
   interval1$: Observable<number> = interval(1000);
   interval2$: Observable<number> = interval(2000);
@@ -31,9 +31,5 @@ export class IntervalComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.createStreams();
-  }
-
-  ngOnDestroy() {
-    console.log('Destroy');
   }
 }

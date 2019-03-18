@@ -1,14 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
-import { Stream,  } from '../../app.interface';
-import { getStreamObj } from '../../utils/utils';
+import { Stream,  } from '../app.interface';
+import { getStreamObj } from '../utils';
 
 @Component({
   selector: 'app-from',
   templateUrl: './from.component.pug',
   styleUrls: ['./from.component.scss']
 })
-export class FromComponent implements OnInit, OnDestroy {
+export class FromComponent implements OnInit {
 
   from1$: Observable<number> = from([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   from2$: Observable<number> = from(new Promise((resolve, reject) => {
@@ -47,9 +47,5 @@ export class FromComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.createStreams();
-  }
-
-  ngOnDestroy() {
-    console.log('Destroy');
   }
 }
