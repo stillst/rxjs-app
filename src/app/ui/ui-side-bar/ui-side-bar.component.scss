@@ -45,4 +45,19 @@
     flex-direction: column;
     margin-bottom: 5px;
   }
+
+  .page-list__link {
+    a {
+      text-decoration: none;
+      color: #364149;
+
+      &:hover {
+        color: #2770a5;
+      }
+    }
+
+    a.active {
+      color: #1788da;
+    }
+  }
 }

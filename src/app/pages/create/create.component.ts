@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, timer } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Stream,  } from '../app.interface';
 import { getStreamObj } from '../utils';
 
@@ -10,9 +10,27 @@ import { getStreamObj } from '../utils';
 })
 export class CreateComponent implements OnInit {
 
-  timer1$: Observable<number> = timer(2000);
-  timer2$: Observable<number> = timer(1000, 2000);
-  timer3$: Observable<number> = timer(2000, 1000);
+  create1$: Observable<number> = Observable.create((observer: Subject<string>) => {
+    observer.next('Hello');
+    observer.next('World');
+    observer.complete();
+  });
+  create2$: Observable<number> = Observable.create((observer: Subject<string>) => {
+    observer.next('Bye');
+    observer.next('World');
+    observer.error('Error');
+  });
+  create3$: Observable<number> = Observable.create((observer: Subject<number>) => {
+    let value = 0;
+    const interval = setInterval(() => {
+      if (value % 2 === 0) {
+        observer.next(value);
+      }
+      value++;
+  }, 1000);
+
+  return () => clearInterval(interval);
+  });
 
   streams: Stream[];
   active = true;
@@ -23,9 +41,26 @@ export class CreateComponent implements OnInit {
 
   createStreams() {
     this.streams = [
-      getStreamObj(this.timer1$, 'timer(2000)', 'Таймер cтреляет через 2 секунды, затем завершается'),
-      getStreamObj(this.timer2$, 'timer(1000, 2000)', 'Таймер cтреляет через секунду, затем раз в две секунды'),
-      getStreamObj(this.timer3$, 'timer(2000, 1000)', 'Таймер cтреляет через 2 секунды, затем каждую секунду'),
+      getStreamObj(this.create1$, `(observer: Subject<string>) => {
+        observer.next('Hello');
+        observer.next('World');
+        observer.complete();
+      }`, 'Observable that emits multiple values, then throw an completes'),
+      getStreamObj(this.create2$, `Observable.create((observer: Subject<string>) => {
+        observer.next('Bye');
+        observer.next('World');
+        observer.error('Error');
+      }`, 'Observable that emits multiple values, then throw an error'),
+      getStreamObj(this.create3$, `Observable.create((observer: Subject<number>) => {
+        let value = 0;
+        const interval = setInterval(() => {
+          if (value % 2 === 0) {
+            observer.next(value);
+          }
+          value++;
+        }, 1000);
+        return () => clearInterval(interval);
+      }`, 'Observable that emits even numbers on timer'),
     ];
   }
 

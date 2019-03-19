@@ -1,12 +1,18 @@
 import { Route } from '@angular/router';
+import { CreateComponent } from './create/create.component';
 import { IntervalComponent } from './interval/interval.component';
 import { FromComponent } from './from/from.component';
 import { OfComponent } from './of/of.component';
 import { TimerComponent } from './timer/timer.component';
+import { DeferComponent } from './defer/defer.component';
+import { EmptyComponent } from './empty/empty.component';
 
 export const pagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
   { path: 'from', component: FromComponent },
   { path: 'of', component: OfComponent },
-  { path: 'timer', component: TimerComponent }
+  { path: 'timer', component: TimerComponent },
+  { path: 'create', component: CreateComponent },
+  { path: 'defer', component: DeferComponent },
+  { path: 'empty', component: EmptyComponent },
 ];

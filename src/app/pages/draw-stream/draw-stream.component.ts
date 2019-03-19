@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { prepend, length, dropLast } from 'ramda';
+import { prepend, length, dropLast, forEachObjIndexed, append, type, split } from 'ramda';
 import { Stream } from '../app.interface';
 
 @Component({
@@ -36,10 +36,39 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
       });
   }
 
+  isValSpecial(val: any) {
+    return type(val) === 'Object' || type(val) === 'Function';
+  }
+
   showVal(val: any): string {
-    return (typeof(val) === 'object' || typeof(val) === 'function')
-      ? typeof(val)
-      : val;
+    switch (type(val)) {
+      case 'Object':
+      case 'Function':
+        return type(val);
+      case 'Date':
+        return split('GMT', val.toString())[0];
+      default:
+        return val;
+    }
+  }
+
+  showValDetails(val: any): string[] {
+    let details = [];
+    switch (type(val)) {
+      case 'Object':
+        forEachObjIndexed((value, key) => {
+          details = append(` ${key}:${value}`, details);
+        }, val);
+        break;
+      case 'Function':
+        details = append(val, details);
+    }
+
+    return details;
+  }
+
+  onClick(val: object) {
+    console.log(val);
   }
 
   ngOnDestroy(): void {
