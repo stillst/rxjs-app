@@ -44,6 +44,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     switch (type(val)) {
       case 'Object':
       case 'Function':
+      case 'MouseEvent':
         return type(val);
       case 'Date':
         return split('GMT', val.toString())[0];
@@ -56,6 +57,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     let details = [];
     switch (type(val)) {
       case 'Object':
+      case 'MouseEvent':
         forEachObjIndexed((value, key) => {
           details = append(` ${key}:${value}`, details);
         }, val);

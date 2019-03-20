@@ -5,6 +5,7 @@ import { CreateComponent } from './create/create.component';
 import { DrawStreamComponent } from './draw-stream/draw-stream.component';
 import { IntervalComponent } from './interval/interval.component';
 import { FromComponent } from './from/from.component';
+import { FromEventComponent  } from './from-event/from-event.component';
 import { OfComponent } from './of/of.component';
 import { TimerComponent } from './timer/timer.component';
 import { DeferComponent } from './defer/defer.component';
@@ -14,6 +15,7 @@ import { EmptyComponent } from './empty/empty.component';
   declarations: [
     DrawStreamComponent,
     IntervalComponent,
+    FromEventComponent,
     FromComponent,
     OfComponent,
     TimerComponent,
