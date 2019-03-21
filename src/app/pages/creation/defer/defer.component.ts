@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, defer, of } from 'rxjs';
-import { Stream,  } from '../app.interface';
-import { getStreamObj } from '../utils';
+import { Stream } from '../../app.interface';
+import { getStreamObj } from '../../utils';
 
 @Component({
   selector: 'app-defer',

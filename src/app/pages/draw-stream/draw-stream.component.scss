@@ -9,7 +9,8 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #000;
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: visible;
 
   .stream__info {
     display: flex;

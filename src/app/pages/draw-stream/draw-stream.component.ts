@@ -13,6 +13,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   values: any[] = [];
   name: string;
   subctiption: Subscription;
+  active = true;
   pause = false;
 
   get numMaxValues(): number {
@@ -30,9 +31,11 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
         console.log(streamValue);
       }, error => {
         this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
+        this.active = false;
         console.log(error);
       }, () => {
         this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
+        this.active = false;
       });
   }
 

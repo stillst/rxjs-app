@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, timer } from 'rxjs';
-import { Stream,  } from '../app.interface';
-import { getStreamObj } from '../utils';
+import { Stream,  } from '../../app.interface';
+import { getStreamObj } from '../../utils';
 
 @Component({
   selector: 'app-timer',

@@ -1,17 +1,10 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './ui-side-bar.component.pug',
   styleUrls: ['./ui-side-bar.component.scss']
 })
-export class UiSideBarComponent implements OnInit, OnDestroy {
+export class UiSideBarComponent {
 
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-
-  }
 }

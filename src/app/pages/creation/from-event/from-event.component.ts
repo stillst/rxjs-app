@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, from, fromEvent } from 'rxjs';
-import { Stream,  } from '../app.interface';
-import { getStreamObj } from '../utils';
+import { Observable, fromEvent } from 'rxjs';
+import { Stream,  } from '../../app.interface';
+import { getStreamObj } from '../../utils';
 
 @Component({
   selector: 'app-from-event',
