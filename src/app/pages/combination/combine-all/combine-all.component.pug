@@ -1,0 +1,16 @@
+p When any observable emits a value, emit the latest value from each.
+.stream-block
+  p Source
+  app-draw-stream([stream]="source1")
+  p Next Source
+  app-draw-stream([stream]="nextSource1")
+  p Result
+  app-draw-stream([stream]="result1")
+
+.stream-block
+  p Source
+  app-draw-stream([stream]="source2")
+  p Next Source
+  app-draw-stream([stream]="nextSource2")
+  p Result
+  app-draw-stream([stream]="result2")

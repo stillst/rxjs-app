@@ -4,11 +4,11 @@ import { mergeRight, length } from 'ramda';
 import { StreamValueShape, StreamValueColor } from './app.interface';
 import { shapes, colors } from './app.constant';
 
-export function getStreamObj(values: Observable<any>, code: string, description: string) {
+export function getStreamObj(values: Observable<any>, code: string, description: string, randomized = false) {
   return {
     code,
     description,
-    values: randomizeStreamValuesView(values),
+    values: randomized ? randomizeStreamValuesView(values) : values,
   };
 }
 

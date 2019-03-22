@@ -30,10 +30,21 @@
           li.page-list__link
             a(routerLink="/timer" routerLinkActive="active") timer
       li.page-list__group
+        span.page-list__group-name combination
+        ul.page-list__links
+          li.page-list__link
+            a(routerLink="/combine-latest" routerLinkActive="active") combineLatest
+          li.page-list__link
+            a(routerLink="/combine-all" routerLinkActive="active") combineAll
+
+      li.page-list__group
         span.page-list__group-name conditional operators
         ul.page-list__links
           li.page-list__link
             a(routerLink="/default-if-empty" routerLinkActive="active") defaultIfEmpty
           li.page-list__link
             a(routerLink="/every" routerLinkActive="active") every
-          li.page-list__link sequenceEqual
+          li.page-list__link
+            a(routerLink="/iif" routerLinkActive="active") iif
+          li.page-list__link
+            a(routerLink="/sequnce-equal" routerLinkActive="active") sequenceEqual

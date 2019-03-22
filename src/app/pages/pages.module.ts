@@ -13,6 +13,10 @@ import { EmptyComponent } from './creation/empty/empty.component';
 import { RangeComponent } from './creation/range/range.component';
 import { DefaultIfEmptyComponent } from './conditional/default-If-empty/default-if-empty.component';
 import { EveryComponent } from './conditional/every/every.component';
+import { IifComponent } from './conditional/iif/iif.component';
+import { SequnceEqualComponent } from './conditional/sequnce-equal/sequnce-equal.component';
+import { CombineLatestComponent } from './combination/combineLatest/combine-latest.component';
+import { CombineAllComponent } from './combination/combine-all/combine-all.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { EveryComponent } from './conditional/every/every.component';
     RangeComponent,
     DefaultIfEmptyComponent,
     EveryComponent,
+    IifComponent,
+    SequnceEqualComponent,
+    CombineLatestComponent,
+    CombineAllComponent
   ],
   imports: [
     CommonModule

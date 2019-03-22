@@ -10,6 +10,10 @@ import { EmptyComponent } from './creation/empty/empty.component';
 import { RangeComponent } from './creation/range/range.component';
 import { DefaultIfEmptyComponent } from './conditional/default-If-empty/default-if-empty.component';
 import { EveryComponent } from './conditional/every/every.component';
+import { IifComponent } from './conditional/iif/iif.component';
+import { SequnceEqualComponent } from './conditional/sequnce-equal/sequnce-equal.component';
+import { CombineLatestComponent  } from './combination/combineLatest/combine-latest.component';
+import { CombineAllComponent } from './combination/combine-all/combine-all.component';
 
 export const pagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -23,4 +27,8 @@ export const pagesRoutes: Route[] = [
   { path: 'range', component: RangeComponent },
   { path: 'default-if-empty', component: DefaultIfEmptyComponent },
   { path: 'every', component: EveryComponent },
+  { path: 'iif', component: IifComponent },
+  { path: 'sequnce-equal', component: SequnceEqualComponent },
+  { path: 'combine-latest', component: CombineLatestComponent },
+  { path: 'combine-all', component: CombineAllComponent },
 ];

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { prepend, length, dropLast, forEachObjIndexed, append, type, split } from 'ramda';
+import { Subscription, Observable } from 'rxjs';
+import { prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop } from 'ramda';
 import { Stream } from '../app.interface';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-draw-stream',
@@ -9,7 +10,7 @@ import { Stream } from '../app.interface';
   styleUrls: ['./draw-stream.component.scss']
 })
 export class DrawStreamComponent implements OnInit, OnDestroy {
-  @Input() stream: Stream;
+  @Input() stream: Stream | Observable<any>;
   values: any[] = [];
   name: string;
   subctiption: Subscription;
@@ -17,11 +18,13 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   pause = false;
 
   get numMaxValues(): number {
-    return this.stream.numMaxValues || 30;
+    return propOr(30, 'numMaxValues', this.stream);
   }
 
   ngOnInit(): void {
-    this.subctiption = this.stream.values.subscribe(
+    const stream = propOr(this.stream, 'values', this.stream);
+
+    this.subctiption = stream.subscribe(
       streamValue => {
         if (this.pause) { return; }
         if (length(this.values) > this.numMaxValues) {
@@ -44,15 +47,28 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   showVal(val: any): string {
-    switch (type(val)) {
+    const value = propOr(val, 'val', val);
+
+    switch (type(value)) {
       case 'Object':
       case 'Function':
       case 'MouseEvent':
-        return type(val);
+
+        if (this.isValObservable(value)) {
+          let result = '';
+
+          value.pipe(take(5)).subscribe(
+            shot => {
+              result = result.concat(`${ shot }, `);
+            },
+          );
+          return result;
+        }
+        return type(value);
       case 'Date':
-        return split('GMT', val.toString())[0];
+        return split('GMT', value.toString())[0];
       default:
-        return val;
+        return value;
     }
   }
 
@@ -70,6 +86,24 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     }
 
     return details;
+  }
+
+  getCssClasses(value: Stream | any): string[] {
+    const classes = [];
+    if (value.shape) {
+      classes.push(value.shape);
+      classes.push(value.color);
+    }
+
+    if (this.isValObservable(value)) {
+      classes.push('observable');
+    }
+
+    return classes;
+  }
+
+  isValObservable(val: any) {
+    return prop('subscribe', val);
   }
 
   onClick(val: object) {
