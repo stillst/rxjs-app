@@ -14,6 +14,8 @@ import { IifComponent } from './conditional/iif/iif.component';
 import { SequnceEqualComponent } from './conditional/sequnce-equal/sequnce-equal.component';
 import { CombineLatestComponent  } from './combination/combineLatest/combine-latest.component';
 import { CombineAllComponent } from './combination/combine-all/combine-all.component';
+import { ConcatComponent } from './combination/concat/concat.component';
+import { MergeComponent } from './combination/merge/merge.component';
 
 export const pagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -31,4 +33,6 @@ export const pagesRoutes: Route[] = [
   { path: 'sequnce-equal', component: SequnceEqualComponent },
   { path: 'combine-latest', component: CombineLatestComponent },
   { path: 'combine-all', component: CombineAllComponent },
+  { path: 'concat', component: ConcatComponent },
+  { path: 'merge', component: MergeComponent },
 ];

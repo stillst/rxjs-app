@@ -17,6 +17,8 @@ import { IifComponent } from './conditional/iif/iif.component';
 import { SequnceEqualComponent } from './conditional/sequnce-equal/sequnce-equal.component';
 import { CombineLatestComponent } from './combination/combineLatest/combine-latest.component';
 import { CombineAllComponent } from './combination/combine-all/combine-all.component';
+import { ConcatComponent } from './combination/concat/concat.component';
+import { MergeComponent } from './combination/merge/merge.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CombineAllComponent } from './combination/combine-all/combine-all.compo
     IifComponent,
     SequnceEqualComponent,
     CombineLatestComponent,
-    CombineAllComponent
+    CombineAllComponent,
+    ConcatComponent,
+    MergeComponent
   ],
   imports: [
     CommonModule

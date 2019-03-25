@@ -91,12 +91,12 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   getCssClasses(value: Stream | any): string[] {
     const classes = [];
     if (value.shape) {
-      classes.push(value.shape);
-      classes.push(value.color);
+      classes.push(`stream__value--${ value.shape }`);
+      classes.push(`stream__value--${ value.color }`);
     }
 
     if (this.isValObservable(value)) {
-      classes.push('observable');
+      classes.push(`stream__value--observable`);
     }
 
     return classes;
