@@ -67,6 +67,12 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
         return type(value);
       case 'Date':
         return split('GMT', value.toString())[0];
+      case 'Array':
+        const strArr = prepend('[ ', append(' ]', value)).toString();
+        const index = strArr.indexOf(',');
+
+        return strArr.slice(0, index) + strArr.slice(index + 1);
+
       default:
         return value;
     }
@@ -102,12 +108,8 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     return classes;
   }
 
-  isValObservable(val: any) {
-    return prop('subscribe', val);
-  }
-
-  onClick(val: object) {
-    console.log(val);
+  isValObservable(val: any): boolean {
+    return !!prop('subscribe', val);
   }
 
   ngOnDestroy(): void {

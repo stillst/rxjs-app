@@ -15,12 +15,14 @@ import { DefaultIfEmptyComponent } from './conditional/default-If-empty/default-
 import { EveryComponent } from './conditional/every/every.component';
 import { IifComponent } from './conditional/iif/iif.component';
 import { SequnceEqualComponent } from './conditional/sequnce-equal/sequnce-equal.component';
-import { CombineLatestComponent } from './combination/combineLatest/combine-latest.component';
+import { CombineLatestComponent } from './combination/combine-latest/combine-latest.component';
 import { CombineAllComponent } from './combination/combine-all/combine-all.component';
 import { ConcatComponent } from './combination/concat/concat.component';
 import { MergeComponent } from './combination/merge/merge.component';
 import { RaceComponent } from './combination/race/race.component';
 import { StartWithComponent } from './combination/start-with/start-with.component';
+import { WithLatestFromComponent } from './combination/with-latest-from/with-latest-from.component';
+import { ZipComponent } from './combination/zip/zip.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { StartWithComponent } from './combination/start-with/start-with.componen
     MergeComponent,
     RaceComponent,
     StartWithComponent,
+    WithLatestFromComponent,
+    ZipComponent
   ],
   imports: [
     CommonModule

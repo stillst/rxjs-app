@@ -1,0 +1,21 @@
+p After all observables emit, emit values as an array
+
+.stream-block
+  p Source1
+  app-draw-stream([stream]="source1")
+  p Source2
+  app-draw-stream([stream]="source2")
+  p Source3
+  app-draw-stream([stream]="source3")
+  p Source4
+  app-draw-stream([stream]="source4")
+  p Result
+  app-draw-stream([stream]="result1")
+
+.stream-block
+  p Source1
+  app-draw-stream([stream]="source2")
+  p Source2
+  app-draw-stream([stream]="source1")
+  p Result
+  app-draw-stream([stream]="result2")
