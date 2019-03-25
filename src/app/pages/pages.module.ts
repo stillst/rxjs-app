@@ -19,6 +19,8 @@ import { CombineLatestComponent } from './combination/combineLatest/combine-late
 import { CombineAllComponent } from './combination/combine-all/combine-all.component';
 import { ConcatComponent } from './combination/concat/concat.component';
 import { MergeComponent } from './combination/merge/merge.component';
+import { RaceComponent } from './combination/race/race.component';
+import { StartWithComponent } from './combination/start-with/start-with.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { MergeComponent } from './combination/merge/merge.component';
     CombineLatestComponent,
     CombineAllComponent,
     ConcatComponent,
-    MergeComponent
+    MergeComponent,
+    RaceComponent,
+    StartWithComponent,
   ],
   imports: [
     CommonModule

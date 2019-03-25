@@ -16,6 +16,8 @@ import { CombineLatestComponent  } from './combination/combineLatest/combine-lat
 import { CombineAllComponent } from './combination/combine-all/combine-all.component';
 import { ConcatComponent } from './combination/concat/concat.component';
 import { MergeComponent } from './combination/merge/merge.component';
+import { RaceComponent } from './combination/race/race.component';
+import { StartWithComponent } from './combination/start-with/start-with.component';
 
 export const pagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -35,4 +37,6 @@ export const pagesRoutes: Route[] = [
   { path: 'combine-all', component: CombineAllComponent },
   { path: 'concat', component: ConcatComponent },
   { path: 'merge', component: MergeComponent },
+  { path: 'race', component: RaceComponent },
+  { path: 'start-with', component: StartWithComponent },
 ];
