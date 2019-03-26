@@ -24,6 +24,7 @@ import { StartWithComponent } from './combination/start-with/start-with.componen
 import { WithLatestFromComponent } from './combination/with-latest-from/with-latest-from.component';
 import { ZipComponent } from './combination/zip/zip.component';
 import { DebounceTimeComponent } from './filtering/debounce-time/debounce-time.component';
+import { DebounceComponent } from './filtering/debounce/debounce.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { DebounceTimeComponent } from './filtering/debounce-time/debounce-time.c
     WithLatestFromComponent,
     ZipComponent,
     DebounceTimeComponent,
+    DebounceComponent,
   ],
   imports: [
     CommonModule

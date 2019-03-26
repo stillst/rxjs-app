@@ -4,7 +4,7 @@ import { mergeRight, length } from 'ramda';
 import { StreamValueShape, StreamValueColor } from './app.interface';
 import { shapes, colors } from './app.constant';
 
-export function getStreamObj(values: Observable<any>, code: string, description: string, randomized = false) {
+export function getStreamObj(values: Observable<any>, code: string, description = '', randomized = false) {
   return {
     code,
     description,
@@ -12,7 +12,7 @@ export function getStreamObj(values: Observable<any>, code: string, description:
   };
 }
 
-export function randomizeStreamValuesView(stream: Observable<any>) {
+function randomizeStreamValuesView(stream: Observable<any>) {
   return stream.pipe(
     map(val => mergeRight({shape: getRandomShape(), color: getRandomColor() }, { val: val } ))
   );
