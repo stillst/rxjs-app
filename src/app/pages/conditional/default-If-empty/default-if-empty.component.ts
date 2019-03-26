@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-default-if-empty',
   templateUrl: './default-if-empty.component.pug',
-  styleUrls: ['./default-if-empty.component.scss']
 })
 export class DefaultIfEmptyComponent implements OnInit {
 

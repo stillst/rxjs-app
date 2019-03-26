@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-race',
   templateUrl: './race.component.pug',
-  styleUrls: ['./race.component.scss']
 })
 export class RaceComponent {
   source1$: Observable<string> = interval(2000).pipe(mapTo('1'));

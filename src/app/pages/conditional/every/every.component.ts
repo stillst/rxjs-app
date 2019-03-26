@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-every',
   templateUrl: './every.component.pug',
-  styleUrls: ['./every.component.scss']
 })
 export class EveryComponent {
   source1$ = of(1, 2, 3, 4, 5);

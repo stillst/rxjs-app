@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-range',
   templateUrl: './range.component.pug',
-  styleUrls: ['./range.component.scss']
 })
 export class RangeComponent implements OnInit {
 

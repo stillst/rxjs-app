@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.pug',
-  styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
 

@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-concat',
   templateUrl: './concat.component.pug',
-  styleUrls: ['./concat.component.scss']
 })
 export class ConcatComponent {
   source1$: Observable<number> = of(1, 2, 3, 4, 5, 6, 7, 8);

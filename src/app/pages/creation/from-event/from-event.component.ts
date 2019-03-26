@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-from-event',
   templateUrl: './from-event.component.pug',
-  styleUrls: ['./from-event.component.scss']
 })
 export class FromEventComponent implements OnInit {
   @ViewChild('button') button;

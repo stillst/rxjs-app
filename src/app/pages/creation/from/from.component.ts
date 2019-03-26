@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-from',
   templateUrl: './from.component.pug',
-  styleUrls: ['./from.component.scss']
 })
 export class FromComponent implements OnInit {
 

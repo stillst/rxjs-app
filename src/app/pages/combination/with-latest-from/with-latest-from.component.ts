@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-with-latest-from',
   templateUrl: './with-latest-from.component.pug',
-  styleUrls: ['./with-latest-from.component.scss']
 })
 export class WithLatestFromComponent {
   source1$: Observable<number> = interval(1000);

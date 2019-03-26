@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-empty',
   templateUrl: './empty.component.pug',
-  styleUrls: ['./empty.component.scss']
 })
 export class EmptyComponent implements OnInit {
 

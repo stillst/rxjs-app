@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-iif',
   templateUrl: './iif.component.pug',
-  styleUrls: ['./iif.component.scss']
 })
 export class IifComponent {
 

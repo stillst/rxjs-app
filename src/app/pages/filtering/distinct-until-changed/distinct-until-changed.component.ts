@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-distinct-until-changed',
   templateUrl: './distinct-until-changed.component.pug',
-  styleUrls: ['./distinct-until-changed.component.scss']
 })
 export class DistinctUntilChangedComponent {
   source1$: Observable<number> = of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1);

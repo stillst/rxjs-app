@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-defer',
   templateUrl: './defer.component.pug',
-  styleUrls: ['./defer.component.scss']
 })
 export class DeferComponent implements OnInit {
 

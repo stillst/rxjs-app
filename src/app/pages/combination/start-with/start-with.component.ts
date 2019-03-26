@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-start-with',
   templateUrl: './start-with.component.pug',
-  styleUrls: ['./start-with.component.scss']
 })
 export class StartWithComponent {
   source1$: Observable<number> = of(1, 2, 3, 4, 5, 6, 7, 8);

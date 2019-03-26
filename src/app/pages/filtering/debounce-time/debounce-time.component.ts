@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-debounce-time',
   templateUrl: './debounce-time.component.pug',
-  styleUrls: ['./debounce-time.component.scss']
 })
 export class DebounceTimeComponent implements OnInit {
   @ViewChild('input') input;

@@ -27,6 +27,8 @@ import { DebounceTimeComponent } from './filtering/debounce-time/debounce-time.c
 import { DebounceComponent } from './filtering/debounce/debounce.component';
 import { DistinctComponent } from './filtering/distinct/distinct.component';
 import { DistinctUntilChangedComponent } from './filtering/distinct-until-changed/distinct-until-changed.component';
+import { ElementAtComponent } from './filtering/element-at/element-at.component';
+import { FirstComponent } from './filtering/first/first.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { DistinctUntilChangedComponent } from './filtering/distinct-until-change
     DebounceComponent,
     DistinctComponent,
     DistinctUntilChangedComponent,
+    ElementAtComponent,
+    FirstComponent,
   ],
   imports: [
     CommonModule

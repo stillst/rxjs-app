@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-interval',
   templateUrl: './interval.component.pug',
-  styleUrls: ['./interval.component.scss']
 })
 export class IntervalComponent implements OnInit {
 

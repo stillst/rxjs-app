@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-merge',
   templateUrl: './merge.component.pug',
-  styleUrls: ['./merge.component.scss']
 })
 export class MergeComponent {
   source1$: Observable<string> = interval(2000).pipe(mapTo('1'));

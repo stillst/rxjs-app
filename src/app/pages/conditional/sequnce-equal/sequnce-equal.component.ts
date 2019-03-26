@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-sequnce-equal',
   templateUrl: './sequnce-equal.component.pug',
-  styleUrls: ['./sequnce-equal.component.scss']
 })
 export class SequnceEqualComponent {
   source1$ = of(4, 5, 6);

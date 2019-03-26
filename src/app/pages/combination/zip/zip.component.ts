@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-zip',
   templateUrl: './zip.component.pug',
-  styleUrls: ['./zip.component.scss']
 })
 export class ZipComponent {
   source1$: Observable<string> = of('Hello');

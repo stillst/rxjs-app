@@ -6,7 +6,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-combine-latest',
   templateUrl: './combine-latest.component.pug',
-  styleUrls: ['./combine-latest.component.scss']
 })
 export class CombineLatestComponent {
   source1$: Observable<number> = timer(1000, 10000);

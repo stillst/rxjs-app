@@ -7,7 +7,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-debounce',
   templateUrl: './debounce.component.pug',
-  styleUrls: ['./debounce.component.scss']
 })
 export class DebounceComponent {
 

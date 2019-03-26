@@ -8,7 +8,6 @@ import { getStreamObj } from '../../utils';
 @Component({
   selector: 'app-combine-all',
   templateUrl: './combine-all.component.pug',
-  styleUrls: ['./combine-all.component.scss']
 })
 export class CombineAllComponent {
   source1$: Observable<number> = of(1, 2, 3, 4, 5, 6, 7, 8);
