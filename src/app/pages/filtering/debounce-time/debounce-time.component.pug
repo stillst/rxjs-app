@@ -1,0 +1,20 @@
+p Discard emitted values that take less than the specified time between output.
+
+.stream-block
+  p Source1
+  app-draw-stream([stream]="source1")
+  p Result
+  app-draw-stream([stream]="result1")
+
+.stream-block
+  p Source2
+  app-draw-stream([stream]="source2")
+  p Result
+  app-draw-stream([stream]="result2")
+
+.stream-block
+  input(#input type="text")
+  p Source2
+  app-draw-stream([stream]="source3")
+  p Result
+  app-draw-stream([stream]="result3")

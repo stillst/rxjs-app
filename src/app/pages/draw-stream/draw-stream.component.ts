@@ -10,7 +10,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./draw-stream.component.scss']
 })
 export class DrawStreamComponent implements OnInit, OnDestroy {
-  @Input() stream: Stream | Observable<any>;
+  @Input() stream: Stream | Observable<any> | null;
   values: any[] = [];
   name: string;
   subctiption: Subscription;
@@ -22,24 +22,28 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const stream = propOr(this.stream, 'values', this.stream);
 
-    this.subctiption = stream.subscribe(
-      streamValue => {
-        if (this.pause) { return; }
-        if (length(this.values) > this.numMaxValues) {
-          this.values = dropLast(1, this.values);
-        }
-        this.values = prepend(streamValue, this.values);
-        console.log(streamValue);
-      }, error => {
-        this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
-        this.active = false;
-        console.log(error);
-      }, () => {
-        this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
-        this.active = false;
-      });
+    if (this.stream) {
+      const stream = propOr(this.stream, 'values', this.stream);
+
+      this.subctiption = stream.subscribe(
+        streamValue => {
+          if (this.pause) { return; }
+          if (length(this.values) > this.numMaxValues) {
+            this.values = dropLast(1, this.values);
+          }
+          this.values = prepend(streamValue, this.values);
+          console.log(streamValue);
+        }, error => {
+          this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
+          this.active = false;
+          console.log(error);
+        }, () => {
+          this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
+          this.active = false;
+        });
+    }
+
   }
 
   isValSpecial(val: any) {

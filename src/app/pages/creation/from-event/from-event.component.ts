@@ -9,7 +9,6 @@ import { getStreamObj } from '../../utils';
   styleUrls: ['./from-event.component.scss']
 })
 export class FromEventComponent implements OnInit {
-
   @ViewChild('button') button;
   clicks$: Observable<any>;
 

@@ -1,9 +1,9 @@
 .stream
   .stream__extra
     .stream__info
-      .stream__name(*ngIf="stream.name") {{ stream.name }}
-      .stream__code(*ngIf="stream.code") {{ stream.code }}
-      .stream__description(*ngIf="stream.description") {{ stream.description }}
+      .stream__name(*ngIf="stream") {{ stream.name }}
+      .stream__code(*ngIf="stream") {{ stream.code }}
+      .stream__description(*ngIf="stream") {{ stream.description }}
       .stream__count(*ngIf="numMaxValues") Макс: {{ numMaxValues }} выстрелов
     .stream__control(*ngIf="active")
       button.stream__toogle((click)="toogle()") {{ pause ? 'play' : 'pause' }}

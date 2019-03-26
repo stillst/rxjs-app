@@ -23,6 +23,7 @@ import { RaceComponent } from './combination/race/race.component';
 import { StartWithComponent } from './combination/start-with/start-with.component';
 import { WithLatestFromComponent } from './combination/with-latest-from/with-latest-from.component';
 import { ZipComponent } from './combination/zip/zip.component';
+import { DebounceTimeComponent } from './filtering/debounce-time/debounce-time.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ZipComponent } from './combination/zip/zip.component';
     RaceComponent,
     StartWithComponent,
     WithLatestFromComponent,
-    ZipComponent
+    ZipComponent,
+    DebounceTimeComponent,
   ],
   imports: [
     CommonModule
