@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop } from 'ramda';
+import { prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop, keys } from 'ramda';
 import { Stream } from '../app.interface';
 import { take } from 'rxjs/operators';
 
@@ -55,9 +55,6 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
 
     switch (type(value)) {
       case 'Object':
-      case 'Function':
-      case 'MouseEvent':
-
         if (this.isValObservable(value)) {
           let result = '';
 
@@ -67,15 +64,26 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
             },
           );
           return result;
+        } else if (length(keys(value)) < 4) {
+          let details = '';
+
+          forEachObjIndexed((objVal, objKey) => {
+            details = append(` ${objKey}:${objVal}`, details);
+          }, val);
+
+          return `{ ${ details } }`;
         }
+
         return type(value);
+
+      case 'Function':
+      case 'MouseEvent':
+        return type(value);
+
       case 'Date':
         return split('GMT', value.toString())[0];
       case 'Array':
-        const strArr = prepend('[ ', append(' ]', value)).toString();
-        const index = strArr.indexOf(',');
-
-        return strArr.slice(0, index) + strArr.slice(index + 1);
+        return `[ ${ value } ]`;
 
       default:
         return value;
@@ -88,7 +96,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
       case 'Object':
       case 'MouseEvent':
         forEachObjIndexed((value, key) => {
-          details = append(` ${key}:${value}`, details);
+          details = append(` ${key}: ${value}`, details);
         }, val);
         break;
       case 'Function':

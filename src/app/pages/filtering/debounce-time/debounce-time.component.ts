@@ -20,7 +20,7 @@ export class DebounceTimeComponent implements OnInit {
   source1: Stream = getStreamObj(this.source1$, 'interval(500)', '');
   source2: Stream = getStreamObj(this.source2$, `interval(2000)`, '');
   source3;
-  source4: Stream = getStreamObj(this.source3$, `of('WAIT', 'ONE', 'SECOND', 'Last will display')`, '');
+  source4: Stream = getStreamObj(this.source4$, `of('WAIT', 'ONE', 'SECOND', 'Last will display')`, '');
 
   result1 = getStreamObj(
     this.source1$.pipe(debounceTime(1000)),

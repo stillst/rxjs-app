@@ -1,26 +1,19 @@
-p Discard emitted values that take less than the specified time between output.
+p Only emit when the current value is different than the last.
 
 .stream-block
-  p Source1
+  p Source
   app-draw-stream([stream]="source1")
   p Result
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source2
+  p Source
   app-draw-stream([stream]="source2")
   p Result
   app-draw-stream([stream]="result2")
 
 .stream-block
-  input(#input type="text")
-  p Source2
+  p Source
   app-draw-stream([stream]="source3")
   p Result
   app-draw-stream([stream]="result3")
-
-.stream-block
-  p Source
-  app-draw-stream([stream]="source4")
-  p Result
-  app-draw-stream([stream]="result4")

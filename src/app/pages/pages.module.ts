@@ -25,6 +25,8 @@ import { WithLatestFromComponent } from './combination/with-latest-from/with-lat
 import { ZipComponent } from './combination/zip/zip.component';
 import { DebounceTimeComponent } from './filtering/debounce-time/debounce-time.component';
 import { DebounceComponent } from './filtering/debounce/debounce.component';
+import { DistinctComponent } from './filtering/distinct/distinct.component';
+import { DistinctUntilChangedComponent } from './filtering/distinct-until-changed/distinct-until-changed.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { DebounceComponent } from './filtering/debounce/debounce.component';
     ZipComponent,
     DebounceTimeComponent,
     DebounceComponent,
+    DistinctComponent,
+    DistinctUntilChangedComponent,
   ],
   imports: [
     CommonModule
