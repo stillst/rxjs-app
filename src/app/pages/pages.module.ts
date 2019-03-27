@@ -29,6 +29,11 @@ import { DistinctComponent } from './filtering/distinct/distinct.component';
 import { DistinctUntilChangedComponent } from './filtering/distinct-until-changed/distinct-until-changed.component';
 import { ElementAtComponent } from './filtering/element-at/element-at.component';
 import { FirstComponent } from './filtering/first/first.component';
+import { FilterComponent } from './filtering/filter/filter.component';
+import { FindComponent } from './filtering/find/find.component';
+import { FindIndexComponent } from './filtering/find-index/find-index.component';
+import { IgnoreElementsComponent } from './filtering/ignore-elements/ignore-elements.component';
+import { LastComponent } from './filtering/last/last.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +65,11 @@ import { FirstComponent } from './filtering/first/first.component';
     DistinctUntilChangedComponent,
     ElementAtComponent,
     FirstComponent,
+    FilterComponent,
+    FindComponent,
+    FindIndexComponent,
+    IgnoreElementsComponent,
+    LastComponent,
   ],
   imports: [
     CommonModule
