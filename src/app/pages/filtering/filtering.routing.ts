@@ -11,6 +11,10 @@ import { FindIndexComponent } from './find-index/find-index.component';
 import { IgnoreElementsComponent } from './ignore-elements/ignore-elements.component';
 import { LastComponent } from './last/last.component';
 import { SampleComponent } from './sample/sample.component';
+import { SkipComponent } from './skip/skip.component';
+import { SkipUntilComponent } from './skip-until/skip-until.component';
+import { SkipWhileComponent } from './skip-while/skip-while.component';
+import { TakeComponent } from './take/take.component';
 
 export const filteringPagesRoutes: Route[] = [
   { path: 'debounce-time', component: DebounceTimeComponent },
@@ -25,4 +29,8 @@ export const filteringPagesRoutes: Route[] = [
   { path: 'ignore-elements', component: IgnoreElementsComponent },
   { path: 'last', component: LastComponent },
   { path: 'sample', component: SampleComponent },
+  { path: 'skip', component: SkipComponent },
+  { path: 'skip-until', component: SkipUntilComponent },
+  { path: 'skip-while', component: SkipWhileComponent },
+  { path: 'take', component: TakeComponent },
 ];

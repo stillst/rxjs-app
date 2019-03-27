@@ -11,79 +11,20 @@
       li.page-list__group
         span.page-list__group-name filtering
         ul.page-list__links
-          li.page-list__link
-            a(routerLink="/debounce-time" routerLinkActive="active") debounceTime
-          li.page-list__link
-            a(routerLink="/debounce" routerLinkActive="active") debounce
-          li.page-list__link
-            a(routerLink="/distinct" routerLinkActive="active") distinct
-          li.page-list__link
-            a(routerLink="/distinct-until-changed" routerLinkActive="active") distinctUntilChanged
-          li.page-list__link
-            a(routerLink="/element-at" routerLinkActive="active") elementAt
-          li.page-list__link
-            a(routerLink="/first" routerLinkActive="active") first
-          li.page-list__link
-            a(routerLink="/filter" routerLinkActive="active") filter
-          li.page-list__link
-            a(routerLink="/find" routerLinkActive="active") find
-          li.page-list__link
-            a(routerLink="/find-index" routerLinkActive="active") findIndex
-          li.page-list__link
-            a(routerLink="/ignore-elements" routerLinkActive="active") ignoreElements
-          li.page-list__link
-            a(routerLink="/last" routerLinkActive="active") last
-          li.page-list__link
-            a(routerLink="/sample" routerLinkActive="active") sample
+          li.page-list__link(*ngFor="let link of filterLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
       li.page-list__group
-        span.page-list__group-name creation observables
+        span.page-list__group-name creation
         ul.page-list__links
-          li.page-list__link
-            a(routerLink="/create" routerLinkActive="active") create
-          li.page-list__link
-            a(routerLink="/defer" routerLinkActive="active") defer
-          li.page-list__link
-            a(routerLink="/empty" routerLinkActive="active") empty
-          li.page-list__link
-            a(routerLink="/from" routerLinkActive="active") from
-          li.page-list__link
-            a(routerLink="/from-event" routerLinkActive="active") fromEvent
-          li.page-list__link
-            a(routerLink="/interval" routerLinkActive="active") interval
-          li.page-list__link
-            a(routerLink="/of" routerLinkActive="active") of
-          li.page-list__link
-            a(routerLink="/range" routerLinkActive="active") range
-          li.page-list__link
-            a(routerLink="/timer" routerLinkActive="active") timer
+          li.page-list__link(*ngFor="let link of combinationLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
       li.page-list__group
         span.page-list__group-name combination
         ul.page-list__links
-          li.page-list__link
-            a(routerLink="/combine-latest" routerLinkActive="active") combineLatest
-          li.page-list__link
-            a(routerLink="/combine-all" routerLinkActive="active") combineAll
-          li.page-list__link
-            a(routerLink="/concat" routerLinkActive="active") concat
-          li.page-list__link
-            a(routerLink="/merge" routerLinkActive="active") merge
-          li.page-list__link
-            a(routerLink="/race" routerLinkActive="active") race
-          li.page-list__link
-            a(routerLink="/start-with" routerLinkActive="active") startWith
-          li.page-list__link
-            a(routerLink="/with-latest-from" routerLinkActive="active") withLatestFrom
-          li.page-list__link
-            a(routerLink="/zip" routerLinkActive="active") zip
-
+          li.page-list__link(*ngFor="let link of creationLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
       li.page-list__group
-        span.page-list__group-name conditional operators
+        span.page-list__group-name conditional
         ul.page-list__links
-          li.page-list__link
-            a(routerLink="/default-if-empty" routerLinkActive="active") defaultIfEmpty
-          li.page-list__link
-            a(routerLink="/every" routerLinkActive="active") every
-          li.page-list__link
-            a(routerLink="/iif" routerLinkActive="active") iif
-          li.page-list__link
-            a(routerLink="/sequnce-equal" routerLinkActive="active") sequenceEqual
+          li.page-list__link(*ngFor="let link of conditionalLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
