@@ -1,19 +1,17 @@
-p Emit values that pass the provided condition.
+p Sample from source when provided observable emits.
 
 .stream-block
-  p Source
+  p Source 1
   app-draw-stream([stream]="source1")
+  p Source 2
+  app-draw-stream([stream]="source2")
   p Result
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source
+  p Source 1
   app-draw-stream([stream]="source2")
+  p Source 2
+  app-draw-stream([stream]="source1")
   p Result
   app-draw-stream([stream]="result2")
-
-.stream-block
-  p Source
-  app-draw-stream([stream]="source3")
-  p Result
-  app-draw-stream([stream]="result3")

@@ -10,6 +10,7 @@ import { FindComponent } from './find/find.component';
 import { FindIndexComponent } from './find-index/find-index.component';
 import { IgnoreElementsComponent } from './ignore-elements/ignore-elements.component';
 import { LastComponent } from './last/last.component';
+import { SampleComponent } from './sample/sample.component';
 
 export const filteringPagesRoutes: Route[] = [
   { path: 'debounce-time', component: DebounceTimeComponent },
@@ -23,4 +24,5 @@ export const filteringPagesRoutes: Route[] = [
   { path: 'find-index', component: FindIndexComponent },
   { path: 'ignore-elements', component: IgnoreElementsComponent },
   { path: 'last', component: LastComponent },
+  { path: 'sample', component: SampleComponent },
 ];
