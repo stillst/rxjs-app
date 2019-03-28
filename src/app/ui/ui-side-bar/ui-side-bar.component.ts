@@ -4,6 +4,7 @@ import { filteringPagesRoutes } from '../../pages/filtering/filtering.routing';
 import { combinationPagesRoutes  } from '../../pages/combination/combination.routing';
 import { creationPagesRoutes  } from '../../pages/creation/creation.routing';
 import { conditionalPagesRoutes  } from '../../pages/conditional/conditional.routing';
+import { transformationPagesRoutes  } from '../../pages/transformation/transformation.routing';
 
 @Component({
   selector: 'app-side-bar',
@@ -25,5 +26,9 @@ export class UiSideBarComponent {
 
   get conditionalLinks() {
     return map(prop('path'), conditionalPagesRoutes);
+  }
+
+  get transformationLinks() {
+    return map(prop('path'), transformationPagesRoutes);
   }
 }
