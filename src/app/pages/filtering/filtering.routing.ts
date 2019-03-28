@@ -15,6 +15,11 @@ import { SkipComponent } from './skip/skip.component';
 import { SkipUntilComponent } from './skip-until/skip-until.component';
 import { SkipWhileComponent } from './skip-while/skip-while.component';
 import { TakeComponent } from './take/take.component';
+import { TakeLastComponent } from './take-last/take-last.component';
+import { TakeUntilComponent } from './take-until/take-until.component';
+import { TakeWhileComponent } from './take-while/take-while.component';
+import { ThrottleComponent } from './throttle/throttle.component';
+import { ThrottleTimeComponent } from './throttle-time/throttle-time.component';
 
 export const filteringPagesRoutes: Route[] = [
   { path: 'debounce-time', component: DebounceTimeComponent },
@@ -33,4 +38,9 @@ export const filteringPagesRoutes: Route[] = [
   { path: 'skip-until', component: SkipUntilComponent },
   { path: 'skip-while', component: SkipWhileComponent },
   { path: 'take', component: TakeComponent },
+  { path: 'take-last', component: TakeLastComponent },
+  { path: 'take-until', component: TakeUntilComponent },
+  { path: 'take-while', component: TakeWhileComponent },
+  { path: 'throttle', component: ThrottleComponent },
+  { path: 'throttle-time', component: ThrottleTimeComponent },
 ];
