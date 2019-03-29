@@ -83,7 +83,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
       case 'Date':
         return split('GMT', value.toString())[0];
       case 'Array':
-        return `[ ${ value } ]`;
+        return `[ ${ value.toString().split(',').join(', ') } ]`;
 
       default:
         return value;

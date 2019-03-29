@@ -11,6 +11,12 @@ import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ExhaustMapComponent } from './exhaust-map/exhaust-map.component';
 import { ExpandComponent } from './expand/expand.component';
 import { GroupByComponent } from './group-by/group-by.component';
+import { MapComponent } from './map/map.component';
+import { MapToComponent } from './map-to/map-to.component';
+import { PartitionComponent } from './partition/partition.component';
+import { PluckComponent } from './pluck/pluck.component';
+import { ReduceComponent } from './reduce/reduce.component';
+import { ScanComponent } from './scan/scan.component';
 
 export const transformationPagesRoutes: Route[] = [
   { path: 'buffer', component: BufferComponent },
@@ -25,4 +31,10 @@ export const transformationPagesRoutes: Route[] = [
   { path: 'exhaust-map', component: ExhaustMapComponent },
   { path: 'expand', component: ExpandComponent },
   { path: 'group-by', component: GroupByComponent },
+  { path: 'map', component: MapComponent },
+  { path: 'map-to', component: MapToComponent },
+  { path: 'partition', component: PartitionComponent },
+  { path: 'pluck', component: PluckComponent },
+  { path: 'reduce', component: ReduceComponent },
+  { path: 'scan', component: ScanComponent },
 ];
