@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, interval, fromEvent } from 'rxjs';
-import { take, buffer } from 'rxjs/operators';
+import { buffer } from 'rxjs/operators';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 

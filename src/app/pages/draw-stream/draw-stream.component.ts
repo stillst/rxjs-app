@@ -22,7 +22,6 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
     if (this.stream) {
       const stream = propOr(this.stream, 'values', this.stream);
 
@@ -42,8 +41,9 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
           this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
           this.active = false;
         });
+    } else {
+      throw(new Error('no input stream'));
     }
-
   }
 
   isValSpecial(val: any) {
