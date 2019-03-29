@@ -1,4 +1,4 @@
-p Reduce over time.
+p Collect output values until provided observable emits, emit as array.
 
 .stream-block
   p Source
@@ -14,12 +14,6 @@ p Reduce over time.
 
 .stream-block
   p Source
-  app-draw-stream([stream]="source2")
-  p Result
-  app-draw-stream([stream]="result3")
-
-.stream-block
-  p Source
   app-draw-stream([stream]="source3")
   p Result
-  app-draw-stream([stream]="result4")
+  app-draw-stream([stream]="result3")

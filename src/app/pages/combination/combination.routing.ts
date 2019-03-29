@@ -3,6 +3,7 @@ import { CombineLatestComponent  } from './combine-latest/combine-latest.compone
 import { CombineAllComponent } from './combine-all/combine-all.component';
 import { ConcatComponent } from './concat/concat.component';
 import { MergeComponent } from './merge/merge.component';
+import { MergeAllComponent } from './merge-all/merge-all.component';
 import { RaceComponent } from './race/race.component';
 import { StartWithComponent } from './start-with/start-with.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
@@ -13,6 +14,7 @@ export const combinationPagesRoutes: Route[] = [
   { path: 'combine-all', component: CombineAllComponent },
   { path: 'concat', component: ConcatComponent },
   { path: 'merge', component: MergeComponent },
+  { path: 'merge-all', component: MergeAllComponent },
   { path: 'race', component: RaceComponent },
   { path: 'start-with', component: StartWithComponent },
   { path: 'with-latest-from', component: WithLatestFromComponent },

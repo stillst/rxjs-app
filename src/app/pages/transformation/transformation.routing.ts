@@ -17,6 +17,7 @@ import { PartitionComponent } from './partition/partition.component';
 import { PluckComponent } from './pluck/pluck.component';
 import { ReduceComponent } from './reduce/reduce.component';
 import { ScanComponent } from './scan/scan.component';
+import { ToArrayComponent } from './to-array/to-array.component';
 
 export const transformationPagesRoutes: Route[] = [
   { path: 'buffer', component: BufferComponent },
@@ -37,4 +38,5 @@ export const transformationPagesRoutes: Route[] = [
   { path: 'pluck', component: PluckComponent },
   { path: 'reduce', component: ReduceComponent },
   { path: 'scan', component: ScanComponent },
+  { path: 'to-array', component: ToArrayComponent },
 ];
