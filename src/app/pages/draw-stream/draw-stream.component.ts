@@ -32,7 +32,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
             this.values = dropLast(1, this.values);
           }
           this.values = prepend(streamValue, this.values);
-          console.log(streamValue);
+          console.log('streamValue', streamValue);
         }, error => {
           this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
           this.active = false;
@@ -56,14 +56,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     switch (type(value)) {
       case 'Object':
         if (this.isValObservable(value)) {
-          let result = '';
-
-          value.pipe(take(5)).subscribe(
-            shot => {
-              result = result.concat(`${ shot }, `);
-            },
-          );
-          return result;
+          return 'Observable';
         } else if (length(keys(value)) < 4) {
           let details = '';
 
@@ -79,7 +72,6 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
       case 'Function':
       case 'MouseEvent':
         return type(value);
-
       case 'Date':
         return split('GMT', value.toString())[0];
       case 'Array':

@@ -18,6 +18,7 @@ import { PluckComponent } from './pluck/pluck.component';
 import { ReduceComponent } from './reduce/reduce.component';
 import { ScanComponent } from './scan/scan.component';
 import { ToArrayComponent } from './to-array/to-array.component';
+import { WindowComponent } from './window/window.component';
 
 export const transformationPagesRoutes: Route[] = [
   { path: 'buffer', component: BufferComponent },
@@ -39,4 +40,5 @@ export const transformationPagesRoutes: Route[] = [
   { path: 'reduce', component: ReduceComponent },
   { path: 'scan', component: ScanComponent },
   { path: 'to-array', component: ToArrayComponent },
+  { path: 'window', component: WindowComponent },
 ];

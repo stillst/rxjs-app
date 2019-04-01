@@ -1,13 +1,11 @@
-p Turn multiple observables into a single observable
+p Collect and subscribe to all observables.
 
 .stream-block
   p Source1
   app-draw-stream([stream]="source1")
   p Source2
   app-draw-stream([stream]="source2")
-  //- p Source3
-  //- app-draw-stream([stream]="source3")
-  p Source4
-  app-draw-stream([stream]="source4")
-  //- p Result
-  //- app-draw-stream([stream]="result1")
+  p Source3
+  app-draw-stream([stream]="source3")
+  p Result
+  app-draw-stream([stream]="result1")

@@ -1,0 +1,17 @@
+p Observable of values for window of time.
+
+.stream-block
+  p Source 1
+  app-draw-stream([stream]="source1")
+  p Source 2
+  app-draw-stream([stream]="source2")
+  p Result
+  app-draw-stream([stream]="result1")
+
+.stream-block
+  p Source 1
+  app-draw-stream([stream]="source3")
+  p Source 2
+  app-draw-stream([stream]="source1")
+  p Result
+  app-draw-stream([stream]="result2")
