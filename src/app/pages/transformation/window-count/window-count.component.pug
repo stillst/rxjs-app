@@ -1,0 +1,8 @@
+p Branch out the source Observable values as a nested Observable with each nested Observable emitting at most windowSize values.
+p It's like bufferCount, but emits a nested Observable instead of an array.
+
+.stream-block
+  p Source
+  app-draw-stream([stream]="source1")
+  p Result
+  app-draw-stream([stream]="result1")

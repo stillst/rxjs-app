@@ -19,6 +19,8 @@ import { ReduceComponent } from './reduce/reduce.component';
 import { ScanComponent } from './scan/scan.component';
 import { ToArrayComponent } from './to-array/to-array.component';
 import { WindowComponent } from './window/window.component';
+import { WindowCountComponent } from './window-count/window-count.component';
+import { WindowTimeComponent } from './window-time/window-time.component';
 
 export const transformationPagesRoutes: Route[] = [
   { path: 'buffer', component: BufferComponent },
@@ -41,4 +43,6 @@ export const transformationPagesRoutes: Route[] = [
   { path: 'scan', component: ScanComponent },
   { path: 'to-array', component: ToArrayComponent },
   { path: 'window', component: WindowComponent },
+  { path: 'window-count', component: WindowCountComponent },
+  { path: 'window-time', component: WindowTimeComponent },
 ];

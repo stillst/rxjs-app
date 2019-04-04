@@ -9,7 +9,7 @@ import { getStreamObj } from '../../utils';
   templateUrl: './window.component.pug',
 })
 export class WindowComponent {
-  source1$: Observable<number> = timer(0, 1000);
+  source1$: Observable<number> = timer(3000, 1000);
   source1: Stream = getStreamObj(this.source1$, `timer(0, 1000)`);
 
   source2$: Observable<number> = interval(3000);
