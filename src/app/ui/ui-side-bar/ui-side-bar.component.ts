@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { map, prop } from 'ramda';
 import { filteringPagesRoutes } from '../../pages/filtering/filtering.routing';
-import { combinationPagesRoutes  } from '../../pages/combination/combination.routing';
-import { creationPagesRoutes  } from '../../pages/creation/creation.routing';
-import { conditionalPagesRoutes  } from '../../pages/conditional/conditional.routing';
-import { transformationPagesRoutes  } from '../../pages/transformation/transformation.routing';
+import { combinationPagesRoutes } from '../../pages/combination/combination.routing';
+import { creationPagesRoutes } from '../../pages/creation/creation.routing';
+import { conditionalPagesRoutes } from '../../pages/conditional/conditional.routing';
+import { transformationPagesRoutes } from '../../pages/transformation/transformation.routing';
+import { subjectsPagesRoutes } from '../../pages/subjects/subjects.routing';
 
 @Component({
   selector: 'app-side-bar',
@@ -30,5 +31,9 @@ export class UiSideBarComponent {
 
   get transformationLinks() {
     return map(prop('path'), transformationPagesRoutes);
+  }
+
+  get subjectsLinks() {
+    return map(prop('path'), subjectsPagesRoutes);
   }
 }

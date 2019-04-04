@@ -1,14 +1,15 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { mergeRight, length } from 'ramda';
-import { StreamValueShape, StreamValueColor } from './app.interface';
+import { StreamValueShape, StreamValueColor, Stream } from './app.interface';
 import { shapes, colors } from './app.constant';
 
-export function getStreamObj(values: Observable<any>, code: string, description = '', randomized = false) {
+export function getStreamObj(values: Observable<any>, code: string, description = '', randomized = false, timeOut = 0 ): Stream {
   return {
     code,
     description,
     values: randomized ? randomizeStreamValuesView(values) : values,
+    timeOut,
   };
 }
 

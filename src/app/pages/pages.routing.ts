@@ -4,6 +4,7 @@ import { conditionalPagesRoutes } from './conditional/conditional.routing';
 import { combinationPagesRoutes } from './combination/combination.routing';
 import { filteringPagesRoutes } from './filtering/filtering.routing';
 import { transformationPagesRoutes } from './transformation/transformation.routing';
+import { subjectsPagesRoutes } from './subjects/subjects.routing';
 
 export const pagesRoutes: Route[] = [
   ...creationPagesRoutes,
@@ -11,4 +12,5 @@ export const pagesRoutes: Route[] = [
   ...combinationPagesRoutes,
   ...filteringPagesRoutes,
   ...transformationPagesRoutes,
+  ...subjectsPagesRoutes,
 ];

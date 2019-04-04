@@ -25,22 +25,27 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
     if (this.stream) {
       const stream = propOr(this.stream, 'values', this.stream);
 
-      this.subctiption = stream.subscribe(
-        streamValue => {
-          if (this.pause) { return; }
-          if (length(this.values) > this.numMaxValues) {
-            this.values = dropLast(1, this.values);
-          }
-          this.values = prepend(streamValue, this.values);
-          console.log('streamValue', streamValue);
-        }, error => {
-          this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
-          this.active = false;
-          console.log(error);
-        }, () => {
-          this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
-          this.active = false;
+      console.log('stream', stream);
+
+      setTimeout(() => {
+        this.subctiption = stream.subscribe(
+          streamValue => {
+            if (this.pause) { return; }
+            if (length(this.values) > this.numMaxValues) {
+              this.values = dropLast(1, this.values);
+            }
+            this.values = prepend(streamValue, this.values);
+            console.log('streamValue', streamValue);
+          }, error => {
+            this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
+            this.active = false;
+            console.log(error);
+          }, () => {
+            this.values = prepend({ val: 'completed', shape: 'block', color: 'black' }, this.values);
+            this.active = false;
         });
+      }, propOr(0, 'timeOut', this.stream));
+
     } else {
       throw(new Error('no input stream'));
     }

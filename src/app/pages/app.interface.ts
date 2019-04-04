@@ -6,6 +6,7 @@ export interface Stream {
   code?: string;
   description?: string;
   numMaxValues?: number;
+  timeOut?: number;
 }
 
 export type StreamValueShape = 'circle' | 'square';

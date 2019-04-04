@@ -1,0 +1,7 @@
+p A special type of Observable which shares a single execution path among observers
+
+.stream-block
+  p Subject 1
+  app-draw-stream([stream]="source1")
+  p Subject 2
+  app-draw-stream([stream]="source2")
