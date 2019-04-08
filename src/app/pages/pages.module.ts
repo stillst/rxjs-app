@@ -7,6 +7,7 @@ import { conditionalPagesRoutes } from '../pages/conditional/conditional.routing
 import { creationPagesRoutes } from '../pages/creation/creation.routing';
 import { transformationPagesRoutes } from '../pages/transformation/transformation.routing';
 import { subjectsPagesRoutes } from '../pages/subjects/subjects.routing';
+import { tasksPagesRoutes } from '../pages/tasks/tasks.routing';
 
 import { DrawStreamComponent } from './draw-stream/draw-stream.component';
 
@@ -17,6 +18,7 @@ const componentsList = [
   filteringPagesRoutes,
   transformationPagesRoutes,
   subjectsPagesRoutes,
+  tasksPagesRoutes,
 ];
 
 @NgModule({

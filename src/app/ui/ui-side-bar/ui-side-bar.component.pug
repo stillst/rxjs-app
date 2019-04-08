@@ -9,6 +9,11 @@
         span.page-list__group-name
           a(routerLink="/test" routerLinkActive="active") Test
       li.page-list__group
+        span.page-list__group-name Tasks
+        ul.page-list__links
+          li.page-list__link(*ngFor="let link of tasksLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+      li.page-list__group
         span.page-list__group-name subjects
         ul.page-list__links
           li.page-list__link(*ngFor="let link of subjectsLinks")

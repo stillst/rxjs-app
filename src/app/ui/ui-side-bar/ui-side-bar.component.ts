@@ -6,6 +6,7 @@ import { creationPagesRoutes } from '../../pages/creation/creation.routing';
 import { conditionalPagesRoutes } from '../../pages/conditional/conditional.routing';
 import { transformationPagesRoutes } from '../../pages/transformation/transformation.routing';
 import { subjectsPagesRoutes } from '../../pages/subjects/subjects.routing';
+import { tasksPagesRoutes } from '../../pages/tasks/tasks.routing';
 
 @Component({
   selector: 'app-side-bar',
@@ -35,5 +36,9 @@ export class UiSideBarComponent {
 
   get subjectsLinks() {
     return map(prop('path'), subjectsPagesRoutes);
+  }
+
+  get tasksLinks() {
+    return map(prop('path'), tasksPagesRoutes);
   }
 }

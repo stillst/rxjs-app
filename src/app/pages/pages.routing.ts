@@ -5,6 +5,7 @@ import { combinationPagesRoutes } from './combination/combination.routing';
 import { filteringPagesRoutes } from './filtering/filtering.routing';
 import { transformationPagesRoutes } from './transformation/transformation.routing';
 import { subjectsPagesRoutes } from './subjects/subjects.routing';
+import { tasksPagesRoutes } from './tasks/tasks.routing';
 
 export const pagesRoutes: Route[] = [
   ...creationPagesRoutes,
@@ -13,4 +14,5 @@ export const pagesRoutes: Route[] = [
   ...filteringPagesRoutes,
   ...transformationPagesRoutes,
   ...subjectsPagesRoutes,
+  ...tasksPagesRoutes,
 ];
