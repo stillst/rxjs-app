@@ -6,6 +6,7 @@ import { filteringPagesRoutes } from './filtering/filtering.routing';
 import { transformationPagesRoutes } from './transformation/transformation.routing';
 import { subjectsPagesRoutes } from './subjects/subjects.routing';
 import { tasksPagesRoutes } from './tasks/tasks.routing';
+import { multicastingPagesRoutes } from './multicasting/multicasting.routing';
 
 export const pagesRoutes: Route[] = [
   ...creationPagesRoutes,
@@ -15,4 +16,5 @@ export const pagesRoutes: Route[] = [
   ...transformationPagesRoutes,
   ...subjectsPagesRoutes,
   ...tasksPagesRoutes,
+  ...multicastingPagesRoutes,
 ];

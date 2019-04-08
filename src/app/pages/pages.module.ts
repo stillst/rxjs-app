@@ -8,6 +8,7 @@ import { creationPagesRoutes } from '../pages/creation/creation.routing';
 import { transformationPagesRoutes } from '../pages/transformation/transformation.routing';
 import { subjectsPagesRoutes } from '../pages/subjects/subjects.routing';
 import { tasksPagesRoutes } from '../pages/tasks/tasks.routing';
+import { multicastingPagesRoutes } from '../pages/multicasting/multicasting.routing';
 
 import { DrawStreamComponent } from './draw-stream/draw-stream.component';
 
@@ -19,6 +20,7 @@ const componentsList = [
   transformationPagesRoutes,
   subjectsPagesRoutes,
   tasksPagesRoutes,
+  multicastingPagesRoutes,
 ];
 
 @NgModule({

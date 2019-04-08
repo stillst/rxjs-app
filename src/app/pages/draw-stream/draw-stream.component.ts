@@ -22,10 +22,9 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
     if (this.stream) {
       const stream = propOr(this.stream, 'values', this.stream);
-
-      console.log('stream', stream);
 
       setTimeout(() => {
         this.subctiption = stream.subscribe(
