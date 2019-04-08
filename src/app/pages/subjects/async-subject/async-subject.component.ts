@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { AsyncSubject } from 'rxjs';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
 @Component({
-  selector: 'app-subject',
-  templateUrl: './subject.component.pug',
+  selector: 'app-async-subject',
+  templateUrl: './async-subject.component.pug',
 })
-export class SubjectComponent implements OnInit {
-  sub = new Subject();
+export class AsyncSubjectComponent implements OnInit {
+  sub = new AsyncSubject();
   result1: Stream = getStreamObj(this.sub,
-    `Подписываемя сразу, первый выстрел тоже сразу, он не приходит, второй поток стреляет через 500`);
+    `Подписываемя сразу, доходят только последние выстрелы перед завершением потока`);
   result2: Stream = getStreamObj(
     this.sub,
-    `Подписываемя через 2000, первые выстрелы через не доходят`,
+    `Подписываемя через 2000, доходят только последние выстрелы перед завершением потока`,
     '',
     false,
   2000);

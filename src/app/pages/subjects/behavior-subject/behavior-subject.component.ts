@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
 @Component({
-  selector: 'app-subject',
-  templateUrl: './subject.component.pug',
+  selector: 'app-behavior-subject',
+  templateUrl: './behavior-subject.component.pug',
 })
-export class SubjectComponent implements OnInit {
-  sub = new Subject();
+export class BehaviorSubjectComponent implements OnInit {
+  sub = new BehaviorSubject(11);
   result1: Stream = getStreamObj(this.sub,
-    `Подписываемя сразу, первый выстрел тоже сразу, он не приходит, второй поток стреляет через 500`);
+    `Подписываемя сразу, начально значение 11, доходят только выстрелы после начального`
+  );
   result2: Stream = getStreamObj(
     this.sub,
-    `Подписываемя через 2000, первые выстрелы через не доходят`,
+    `Подписываемя через 2000, доходят не все выстрелы`,
     '',
     false,
   2000);
