@@ -9,7 +9,7 @@ import { transformationPagesRoutes } from '../pages/transformation/transformatio
 import { subjectsPagesRoutes } from '../pages/subjects/subjects.routing';
 import { tasksPagesRoutes } from '../pages/tasks/tasks.routing';
 import { multicastingPagesRoutes } from '../pages/multicasting/multicasting.routing';
-
+import { UiCodeComponent } from '../ui/ui-code/ui-code.component';
 import { DrawStreamComponent } from './draw-stream/draw-stream.component';
 
 const componentsList = [
@@ -26,6 +26,7 @@ const componentsList = [
 @NgModule({
   declarations: [
     DrawStreamComponent,
+    UiCodeComponent,
     map(map(prop('component')))(componentsList)
   ],
   imports: [
@@ -33,6 +34,7 @@ const componentsList = [
   ],
   exports: [
     DrawStreamComponent,
+    UiCodeComponent,
   ]
 })
 export class PagesModule { }

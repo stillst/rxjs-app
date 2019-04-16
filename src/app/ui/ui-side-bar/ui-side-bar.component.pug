@@ -6,8 +6,10 @@
   nav
     ul.page-list
       li.page-list__group
-        span.page-list__group-name
-          a(routerLink="/test" routerLinkActive="active") Test
+        span.page-list__group-name creation
+        ul.page-list__links
+          li.page-list__link(*ngFor="let link of creationLinks")
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
       li.page-list__group
         span.page-list__group-name Multicasting
         ul.page-list__links
@@ -32,11 +34,6 @@
         span.page-list__group-name filtering
         ul.page-list__links
           li.page-list__link(*ngFor="let link of filterLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
-      li.page-list__group
-        span.page-list__group-name creation
-        ul.page-list__links
-          li.page-list__link(*ngFor="let link of combinationLinks")
             a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
       li.page-list__group
         span.page-list__group-name combination

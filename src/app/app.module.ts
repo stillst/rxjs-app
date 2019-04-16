@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatesComponent } from './create/create.component';
+import { PagesModule } from './pages/pages.module';
 import { UiSideBarComponent } from './ui/ui-side-bar/ui-side-bar.component';
 import { UiMainComponent } from './ui/ui-main/ui-main.component';
-import { PagesModule } from './pages/pages.module';
+import { UiCodeComponent } from './ui/ui-code/ui-code.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PagesModule } from './pages/pages.module';
     PagesModule,
     HttpClientModule
   ],
-  exports: [CommonModule],
+  exports: [CommonModule, UiCodeComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

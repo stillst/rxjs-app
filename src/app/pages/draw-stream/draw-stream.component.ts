@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop, keys } from 'ramda';
 import { Stream } from '../app.interface';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-draw-stream',
