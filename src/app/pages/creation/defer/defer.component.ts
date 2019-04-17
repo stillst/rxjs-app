@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, defer, of } from 'rxjs';
+import { defer, of } from 'rxjs';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -8,22 +8,19 @@ import { getStreamObj } from '../../utils';
   templateUrl: './defer.component.pug',
 })
 export class DeferComponent implements OnInit {
-
-  defer1$: Observable<Date> = defer(() => of(new Date()));
   streams: Stream[];
-  active = true;
-
-  toogle() {
-    this.active = !this.active;
-  }
-
-  createStreams() {
-    this.streams = [
-      getStreamObj(this.defer1$, 'timer(2000)', 'Defer to get current date/time at the time of subscription'),
-    ];
-  }
 
   ngOnInit() {
     this.createStreams();
+  }
+
+  createStreams(): void {
+    this.streams = [
+      getStreamObj(
+        defer(() => of(new Date())),
+        `defer(() => of(new Date()))`,
+        `Поток из of(new Date())`
+      ),
+    ];
   }
 }

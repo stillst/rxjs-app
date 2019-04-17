@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, empty } from 'rxjs';
+import { empty } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -8,22 +9,20 @@ import { getStreamObj } from '../../utils';
   templateUrl: './empty.component.pug',
 })
 export class EmptyComponent implements OnInit {
-
-  empty1$: Observable<any> = empty();
   streams: Stream[];
-  active = true;
-
-  toogle() {
-    this.active = !this.active;
-  }
-
-  createStreams() {
-    this.streams = [
-      getStreamObj(this.empty1$, 'empty()', 'Empty immediately completes'),
-    ];
-  }
 
   ngOnInit() {
     this.createStreams();
+  }
+
+  createStreams(): void {
+    this.streams = [
+      getStreamObj(empty(),  `empty()`, `Поток, который сразу же завершается`),
+      getStreamObj(
+        empty().pipe(startWith(7)),
+        `empty().pipe(startWith(7)`,
+        `Поток, который выстроеливает начальным значением и сразу же завершается`
+      ),
+    ];
   }
 }
