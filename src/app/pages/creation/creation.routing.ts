@@ -9,6 +9,8 @@ import { DeferComponent } from './defer/defer.component';
 import { EmptyComponent } from './empty/empty.component';
 import { RangeComponent } from './range/range.component';
 import { AjaxComponent } from './ajax/ajax.component';
+import { GenerateComponent } from './generate/generate.component';
+import { ThrowErrorComponent } from './throw-error/throw-error.component';
 
 export const creationPagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -21,4 +23,6 @@ export const creationPagesRoutes: Route[] = [
   { path: 'empty', component: EmptyComponent },
   { path: 'range', component: RangeComponent },
   { path: 'ajax', component: AjaxComponent },
+  { path: 'generate', component: GenerateComponent },
+  { path: 'throw-error', component: ThrowErrorComponent },
 ];
