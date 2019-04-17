@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable, fromEvent } from 'rxjs';
-import { Stream,  } from '../../app.interface';
+import { fromEvent } from 'rxjs';
+import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
 @Component({
@@ -9,25 +9,24 @@ import { getStreamObj } from '../../utils';
 })
 export class FromEventComponent implements OnInit {
   @ViewChild('button') button;
-  clicks$: Observable<any>;
-
   streams: Stream[];
-  active = true;
-
-  toogle() {
-    this.active = !this.active;
-  }
-
-  createStreams() {
-    this.streams = [
-      getStreamObj(
-        fromEvent(this.button.nativeElement, 'click'), 'fromEvent(this.button.nativeElement, "click")',
-        'Observable from mouse clicks'
-      ),
-    ];
-  }
 
   ngOnInit() {
     this.createStreams();
+  }
+
+  createStreams(): void {
+    this.streams = [
+      getStreamObj(
+        fromEvent(document, 'click'),
+        `fromEvent(document, "click")`,
+        `Поток из всех кликов на странице`
+      ),
+      getStreamObj(
+        fromEvent(this.button.nativeElement, 'click'),
+        `fromEvent(this.button.nativeElement, "click")`,
+        `Поток из кликов по кнопке`
+      ),
+    ];
   }
 }

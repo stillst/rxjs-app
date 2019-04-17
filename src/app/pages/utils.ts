@@ -33,3 +33,12 @@ function getRandomColor(): StreamValueColor {
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+export function* generateDoubles(seed) {
+  let i = seed;
+  while (i < 1000) {
+    yield i;
+    i = 2 * i; // double it
+  }
+}
