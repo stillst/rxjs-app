@@ -8,6 +8,7 @@ import { TimerComponent } from './timer/timer.component';
 import { DeferComponent } from './defer/defer.component';
 import { EmptyComponent } from './empty/empty.component';
 import { RangeComponent } from './range/range.component';
+import { AjaxComponent } from './ajax/ajax.component';
 
 export const creationPagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -19,4 +20,5 @@ export const creationPagesRoutes: Route[] = [
   { path: 'defer', component: DeferComponent },
   { path: 'empty', component: EmptyComponent },
   { path: 'range', component: RangeComponent },
+  { path: 'ajax', component: AjaxComponent },
 ];
