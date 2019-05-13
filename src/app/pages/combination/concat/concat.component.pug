@@ -1,25 +1,25 @@
-p Subscribe to observables in order as previous completes, emit values.
+p Объединяет поток со следующим когда, предыдущий заканчивается
 
 .stream-block
-  p Source1
+  p Первый поток
   app-draw-stream([stream]="source1")
-  p Source2
+  p Второй поток
   app-draw-stream([stream]="source2")
-  p Result
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source1
-  app-draw-stream([stream]="source1")
-  p Source2
+  p Первый поток
+  app-draw-stream([stream]="source2")
+  p Второй поток
   app-draw-stream([stream]="source3")
-  p Result
+  p Результат
   app-draw-stream([stream]="result2")
 
-//- .stream-block
-//-   p Source1
-//-   app-draw-stream([stream]="source3")
-//-   p Source2
-//-   app-draw-stream([stream]="source1")
-//-   p Result
-//-   app-draw-stream([stream]="result3")
+.stream-block
+  p Первый поток
+  app-draw-stream([stream]="source3")
+  p Второй поток
+  app-draw-stream([stream]="source1")
+  p Результат
+  app-draw-stream([stream]="result3")

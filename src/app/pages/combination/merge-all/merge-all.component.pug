@@ -1,11 +1,10 @@
-p Collect and subscribe to all observables.
+p Конвертирует поток высшего порядка, в поток, который стреляет значениями всех потоков высшего порядка
+p (Flattens an Observable-of-Observables)
 
 .stream-block
-  p Source1
+  p Поток кликов
   app-draw-stream([stream]="source1")
-  p Source2
+  p Поток высшего порядка (поток кликов перемапенный на поток потоков интервалов)
   app-draw-stream([stream]="source2")
-  p Source3
-  app-draw-stream([stream]="source3")
-  p Result
+  p Результат merge-all
   app-draw-stream([stream]="result1")

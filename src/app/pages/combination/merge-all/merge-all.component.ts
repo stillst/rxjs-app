@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { interval, fromEvent } from 'rxjs';
-import { map, take, concatMap, mergeAll } from 'rxjs/operators';
+import { interval, fromEvent, of } from 'rxjs';
+import { map, take, mergeAll } from 'rxjs/operators';
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -10,12 +10,11 @@ import { getStreamObj } from '../../utils';
 })
 export class MergeAllComponent {
   source1$ = fromEvent(document, 'click');
-  source2$ = interval(1000).pipe(take(3));
-  source3$ = fromEvent(document, 'click').pipe(map(() => interval(1000).pipe(take(3))));
+  source2$ = this.source1$.pipe(map(() => interval(1000).pipe(take(5))));
+  result1$ = this.source2$.pipe(mergeAll());
 
   source1: Stream = getStreamObj(this.source1$, `fromEvent(document, 'click')`);
-  source2: Stream = getStreamObj(this.source2$, `interval(1000).pipe(take(3)`);
-  source3: Stream = getStreamObj(this.source3$, `fromEvent(document, 'click').pipe(map(interval(1000).pipe(take(3)))`);
+  source2: Stream = getStreamObj(this.source2$, `fromEvent(document, 'click').pipe(map(() => interval(1000).pipe(take(5))))`);
 
-  result1: Stream = getStreamObj(this.source3$.pipe(mergeAll()), `fromEvent(document, 'click')`);
+  result1: Stream = getStreamObj(this.result1$, `fromEvent(document, 'click').pipe(map(() => interval(1000).pipe(take(5))), mergeAll())`);
 }

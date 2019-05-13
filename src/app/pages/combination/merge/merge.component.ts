@@ -9,21 +9,34 @@ import { getStreamObj } from '../../utils';
   templateUrl: './merge.component.pug',
 })
 export class MergeComponent {
-  source1$: Observable<string> = interval(2000).pipe(mapTo('1'));
-  source2$: Observable<string> = interval(3000).pipe(mapTo('2'));
-  source3$: Observable<string> = interval(1000).pipe(mapTo('3'));
+  source1$: Observable<string> = interval(1000).pipe(mapTo('1'));
+  source2$: Observable<string> = interval(2000).pipe(mapTo('2'));
+  source3$: Observable<string> = interval(3000).pipe(mapTo('3'));
 
-  source1: Stream = getStreamObj(this.source1$, `interval(2000).pipe(mapTo('1'))`, '');
-  source2: Stream = getStreamObj(this.source2$, `interval(3000).pipe(mapTo('2'))`, '');
-  source3: Stream = getStreamObj(this.source3$, `interval(1000).pipe(mapTo('3'))`, '');
+  source1: Stream = getStreamObj(
+    this.source1$,
+    `interval(1000).pipe(mapTo('1'))`,
+    'Поток единиц, стреляет каждую секунду'
+  );
+  source2: Stream = getStreamObj(
+    this.source2$,
+    `interval(2000).pipe(mapTo('2'))`,
+    'Поток двоек, стреляет раз в две секнуды'
+  );
+  source3: Stream = getStreamObj(
+    this.source3$,
+    `interval(3000).pipe(mapTo('3'))`,
+    'Поток троек, стреляет раз в 3 секунды'
+  );
 
-  result1$ = merge(this.source1$, this.source2$, this.source3$);
 
-  result1: Stream = getStreamObj(this.result1$,
-  `merge(
-    interval(2000).pipe(mapTo('1')),
-    interval(3000).pipe(mapTo('2'))),
-    interval(1000).pipe(mapTo('3')),
+  result1: Stream = getStreamObj(
+    merge(this.source1$, this.source2$, this.source3$),
+    `merge(
+      interval(1000).pipe(mapTo('1')),
+      interval(2000).pipe(mapTo('2'))),
+      interval(3000).pipe(mapTo('3')),
     `,
-  `concat as static method`);
+    `Результат объединения`
+  );
 }
