@@ -1,13 +1,13 @@
-p Emit given value first.
+p Первым стреляет переданным значением
 
 .stream-block
-  p Source
+  p Поток
   app-draw-stream([stream]="source1")
-  p Result
+  p Результат приминения startWith('Hello!')
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source
+  p Поток
   app-draw-stream([stream]="source2")
-  p Result
+  p Результат приминения startWith('Hello', 'World!')
   app-draw-stream([stream]="result2")

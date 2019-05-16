@@ -13,9 +13,9 @@ export class RaceComponent {
   source2$: Observable<string> = interval(3000).pipe(mapTo('2'));
   source3$: Observable<string> = interval(1000).pipe(mapTo('3'));
 
-  source1: Stream = getStreamObj(this.source1$, `interval(2000).pipe(mapTo('1'))`, '');
-  source2: Stream = getStreamObj(this.source2$, `interval(3000).pipe(mapTo('2'))`, '');
-  source3: Stream = getStreamObj(this.source3$, `interval(1000).pipe(mapTo('3'))`, '');
+  source1: Stream = getStreamObj(this.source1$, `interval(2000).pipe(mapTo('1'))`, 'Поток двоек, стреляет через 2 секунды');
+  source2: Stream = getStreamObj(this.source2$, `interval(3000).pipe(mapTo('2'))`, 'Поток троек, стреляет через 3 секунды');
+  source3: Stream = getStreamObj(this.source3$, `interval(1000).pipe(mapTo('3'))`, 'Поток единиц, стреляет через секунду');
 
   result1$ = race(this.source1$, this.source2$, this.source3$);
 
@@ -25,5 +25,5 @@ export class RaceComponent {
     interval(3000).pipe(mapTo('2'))),
     interval(1000).pipe(mapTo('3')),
     `,
-  `concat as static method`);
+  `Поток единиц`);
 }

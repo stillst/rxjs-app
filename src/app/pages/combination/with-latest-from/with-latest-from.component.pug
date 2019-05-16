@@ -1,17 +1,17 @@
-p Emit given value first.
+p Комбинирует потоки, в результате массив последних значений
 
 .stream-block
-  p Source1
+  p Первый поток
   app-draw-stream([stream]="source1")
-  p Source2
+  p Второй поток
   app-draw-stream([stream]="source2")
-  p Result
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source1
+  p Первый поток
   app-draw-stream([stream]="source2")
-  p Source2
+  p Второй поток
   app-draw-stream([stream]="source1")
-  p Result
+  p Результат
   app-draw-stream([stream]="result2")
