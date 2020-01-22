@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Observable, timer, combineLatest } from 'rxjs';
+import { Observable, timer, combineLatest, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -39,15 +42,14 @@ export class CombineLatestComponent {
       this.source1$,
       this.source2$,
       this.source3$,
-      (one: number, two: number , tree: number) => one + two + tree
+      (one: number, two: number , tree: number) => (one + two + tree) / 2,
     ),
     `combineLatest(
         timer(1000, 10000),
         timer(2000, 1000),
         timer(2000, 2000),
-        (one: number, two: number , tree: number) => one + two + tree;
+        (one: number, two: number , tree: number) => (one + two + tree) / 2;
     )`,
     'Комбинирует три потока, суммирует значение и стреляет'
   );
-
 }

@@ -21,7 +21,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
+    console.log('this.stream', this.stream);
     if (this.stream) {
       const stream = propOr(this.stream, 'values', this.stream);
 

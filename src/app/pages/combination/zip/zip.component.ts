@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable, interval, of, zip } from 'rxjs';
+import { Observable, of, zip } from 'rxjs';
 import { withLatestFrom, delay } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 

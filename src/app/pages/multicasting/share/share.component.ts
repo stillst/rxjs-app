@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { share } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -10,7 +12,6 @@ import { getStreamObj } from '../../utils';
 })
 export class ShareComponent {
   constructor(private http$: HttpClient) {
-
   }
 
   source1$ = this.http$.get<any>('https://yesno.wtf/api');

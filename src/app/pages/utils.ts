@@ -4,7 +4,13 @@ import { mergeRight, length } from 'ramda';
 import { StreamValueShape, StreamValueColor, Stream } from './app.interface';
 import { shapes, colors } from './app.constant';
 
-export function getStreamObj(values: Observable<any>, code: string, description = '', randomized = false, timeOut = 0 ): Stream {
+export function getStreamObj(
+  values: Observable<any>,
+  code: string,
+  description = '',
+  randomized = false,
+  timeOut = 0
+): Stream {
   return {
     code,
     description,
@@ -33,7 +39,6 @@ function getRandomColor(): StreamValueColor {
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 
 export function* generateDoubles(seed) {
   let i = seed;

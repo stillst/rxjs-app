@@ -1,21 +1,22 @@
-p After all observables emit, emit values as an array
+p После того как выстрелили все потоки, стреляет массивом их значений
+p В отличии от CombineLatest, ждет пока выстрелят n-th потоки и затем стреляет
 
 .stream-block
-  p Source1
+  p Первый поток
   app-draw-stream([stream]="source1")
-  p Source2
+  p Второй поток
   app-draw-stream([stream]="source2")
-  p Source3
+  p Третий поток
   app-draw-stream([stream]="source3")
-  p Source4
+  p Четвертый поток
   app-draw-stream([stream]="source4")
-  p Result
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source1
+  p Первый поток
   app-draw-stream([stream]="source2")
-  p Source2
+  p Второй поток
   app-draw-stream([stream]="source1")
-  p Result
+  p Результат
   app-draw-stream([stream]="result2")

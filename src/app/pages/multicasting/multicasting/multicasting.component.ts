@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { interval, Subject, ReplaySubject, ConnectableObservable } from 'rxjs';
 import { multicast } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 

@@ -1,7 +1,13 @@
-p A special type of Observable which shares a single execution path among observers
+p Особый тип Observable, которые одновременно являются и наблюдателем, и наблюдаемым
+p Часто используются для того, чтобы передавать значения сразу нескольким подписчикам.
+p По умолчанию являются «горячими», то мы можем быть уверены, что у нас создается один поток, значения из которого будут получать наши подписчики.
+
+p AsyncSubject возвращает последние значения из потока после завершения
 
 .stream-block
-  p Result 1
+  p Пример 1
   app-draw-stream([stream]="result1")
-  p Result 2
+  p Пример 2
   app-draw-stream([stream]="result2")
+  p Пример 3
+  app-draw-stream([stream]="result3")

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { BehaviorSubject } from 'rxjs';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -8,24 +10,29 @@ import { getStreamObj } from '../../utils';
   templateUrl: './behavior-subject.component.pug',
 })
 export class BehaviorSubjectComponent implements OnInit {
-  sub = new BehaviorSubject(11);
+  sub = new BehaviorSubject(42);
+
   result1: Stream = getStreamObj(this.sub,
-    `Подписываемя сразу, начально значение 11, доходят только выстрелы после начального`
+    `Подписываемся сразу, первое значение 42`
   );
   result2: Stream = getStreamObj(
     this.sub,
-    `Подписываемя через 2000, доходят не все выстрелы`,
+    `Подписываемся через 2000, доходят не все выстрелы`,
     '',
     false,
-  2000);
+    2000,
+  );
 
   ngOnInit(): void {
-    this.sub.next(0);
-    setTimeout(() => this.sub.next(1), 500);
-    setTimeout(() => this.sub.next(2), 1000);
-    setTimeout(() => this.sub.next(3), 2000);
-    setTimeout(() => this.sub.next(4), 3000);
-    setTimeout(() => this.sub.next(5), 4000);
-    setTimeout(() => this.sub.complete(), 5000);
+    let i = 0;
+    const timerId = setInterval(() => {
+      i = i + 1;
+      this.sub.next(i);
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(timerId);
+      this.sub.complete();
+    }, 6000);
   }
 }

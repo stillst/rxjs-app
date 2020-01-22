@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+
 import { CreateComponent } from './create/create.component';
 import { IntervalComponent } from './interval/interval.component';
 import { FromComponent } from './from/from.component';
