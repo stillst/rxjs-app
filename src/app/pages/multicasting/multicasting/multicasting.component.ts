@@ -14,17 +14,53 @@ export class MulticastingComponent implements OnInit {
   subject = new Subject();
   replaySubject = new ReplaySubject();
 
-  source1$ = interval(1000).pipe(
-    multicast(() => this.subject),
+  source1$ = interval(1000).pipe(multicast(() => this.subject));
+
+  source1: Stream = getStreamObj(
+    this.source1$,
+    `interval(1000).pipe(multicast(() => this.subject))`,
+    '',
+    false,
   );
 
-  source1: Stream = getStreamObj(this.source1$, ``, '', false, 4000);
-
-  source2$ = interval(1000).pipe(
-    multicast(() => this.replaySubject),
+  result1: Stream = getStreamObj(
+    this.source1$,
+    `Подписываемся сразу`,
+    ``,
+    false,
   );
 
-  source2: Stream = getStreamObj(this.source2$, ``, '', false, 4000);
+  result2: Stream = getStreamObj(
+    this.source1$,
+    `Подписываемся через 4 секунды`,
+    ``,
+    false,
+    4000,
+  );
+
+  source2$ = interval(1000).pipe(multicast(() => this.replaySubject));
+
+  source2: Stream = getStreamObj(
+    this.source2$,
+    `interval(1000).pipe(multicast(() => this.replaySubject))`,
+    '',
+    false,
+  );
+
+  result3: Stream = getStreamObj(
+    this.source2$,
+    `Подписываемся сразу`,
+    ``,
+    false,
+  );
+
+  result4: Stream = getStreamObj(
+    this.source2$,
+    `Подписываемся через 4 секунды`,
+    ``,
+    false,
+    4000,
+  );
 
   ngOnInit(): void {
     (this.source1$ as ConnectableObservable<string>).connect();

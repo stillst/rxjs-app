@@ -1,15 +1,20 @@
-p Разделение значений между несколькими подписчиками
+p Разделение значений между несколькими подписчиками (холодное наблюдаемое в горячее)
+
+p multicast в качестве параметра принимает любой из 4-х видов subject’ов.
+p Observable возвращает объект с типом ConnectableObservable. Этот объект похож на обычный Observable, за исключением одного момента: он начинает производить элементы не тогда, когда на него подписываются, а только тогда, когда на нем вызвана функция .connect()
 
 .stream-block
-  p Subject
-  p Source 1
+  p Поток с multicast и обычным subject
   app-draw-stream([stream]="source1")
-  p Source 1
-  app-draw-stream([stream]="source1")
+  p Результат 1
+  app-draw-stream([stream]="result1")
+  p Результат 2
+  app-draw-stream([stream]="result2")
 
 .stream-block
-  p replaySubject
-  p Source 2
+  p Поток с multicast и replaySubject
   app-draw-stream([stream]="source2")
-  p Source 2
-  app-draw-stream([stream]="source2")
+  p Результат 3
+  app-draw-stream([stream]="result3")
+  p Результат 4
+  app-draw-stream([stream]="result4")

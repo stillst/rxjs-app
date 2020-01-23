@@ -5,8 +5,8 @@ import { PublishComponent } from './publish/publish.component';
 import { ShareReplayComponent } from './share-replay/share-replay.component';
 
 export const multicastingPagesRoutes: Route[] = [
-  { path: 'share', component:  ShareComponent },
   { path: 'multicasting', component:  MulticastingComponent },
+  { path: 'share', component:  ShareComponent },
   { path: 'publish', component:  PublishComponent },
   { path: 'share-replay', component: ShareReplayComponent },
 ];
