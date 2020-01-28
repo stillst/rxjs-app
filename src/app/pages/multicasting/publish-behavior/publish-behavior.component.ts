@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ConnectableObservable, interval } from 'rxjs';
-import { publish } from 'rxjs/operators';
+import { publishBehavior } from 'rxjs/operators';
 
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
 @Component({
-  selector: 'app-publish',
-  templateUrl: './publish.component.pug',
+  selector: 'app-publish-behavior',
+  templateUrl: './publish-behavior.component.pug',
 })
-export class PublishComponent implements OnInit {
+export class PublishBehaviorComponent implements OnInit {
   constructor() {
   }
 
-  source1$ = interval(1000).pipe(publish());
-  source1: Stream = getStreamObj(this.source1$, `interval(1000).pipe(publish())`);
+  source1$ = interval(1000).pipe(publishBehavior(42));
+  source1: Stream = getStreamObj(this.source1$, `interval(1000).pipe(publishBehavior(42))`);
 
   result1: Stream = getStreamObj(
     this.source1$,

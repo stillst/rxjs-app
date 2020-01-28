@@ -1,14 +1,16 @@
-p Разделение значений между несколькими подписчиками
-p share is like multicast with a Subject and refCount!
+p Разделение значений между несколькими подписчиками (холодное наблюдаемое в горячее)
+p Оператор publish это сокращенный тип записи оператора multicast(new Subject())
+p Также помимо оператора publish существуют другие операторы, который упрощают запись и сводят ее к одной строке.
+ul
+  li publish =  multicast + Subject
+  li publishReplay = multicast + ReplaySubject
+  li publishBehavior = multicast + BehaviorSubject
+  li publishLast = multicast + AsyncSubject
 
 .stream-block
-  p Source 1
+  p Исходный поток
   app-draw-stream([stream]="source1")
-  p Source 1
-  app-draw-stream([stream]="source1")
-
-.stream-block
-  p Source 2
-  app-draw-stream([stream]="source2")
-  p Source 2
-  app-draw-stream([stream]="source2")
+  p Результат 1
+  app-draw-stream([stream]="result1")
+  p Результат 2
+  app-draw-stream([stream]="result2")

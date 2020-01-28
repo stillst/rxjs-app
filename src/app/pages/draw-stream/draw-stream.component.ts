@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
-import { prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop, keys } from 'ramda';
+import {
+  prepend, length, dropLast, forEachObjIndexed, append, type, split, propOr, prop, keys
+} from 'ramda';
+
 import { Stream } from '../app.interface';
 
 @Component({
@@ -10,6 +13,7 @@ import { Stream } from '../app.interface';
 })
 export class DrawStreamComponent implements OnInit, OnDestroy {
   @Input() stream: Stream | Observable<any> | null;
+
   values: any[] = [];
   name: string;
   subctiption: Subscription;
@@ -33,7 +37,7 @@ export class DrawStreamComponent implements OnInit, OnDestroy {
               this.values = dropLast(1, this.values);
             }
             this.values = prepend(streamValue, this.values);
-            console.log('streamValue', streamValue);
+            // console.log('streamValue', streamValue);
           }, error => {
             this.values = prepend({ val: 'error', shape: 'cross', color: 'red' }, this.values);
             this.active = false;

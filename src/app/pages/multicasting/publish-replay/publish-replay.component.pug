@@ -1,0 +1,10 @@
+p Разделение значений между несколькими подписчиками (холодное наблюдаемое в горячее)
+p Оператор publishReplay() это сокращенный тип записи оператора multicast(new ReplaySubject())
+
+.stream-block
+  p Исходный поток
+  app-draw-stream([stream]="source1")
+  p Результат 1
+  app-draw-stream([stream]="result1")
+  p Результат 2
+  app-draw-stream([stream]="result2")
