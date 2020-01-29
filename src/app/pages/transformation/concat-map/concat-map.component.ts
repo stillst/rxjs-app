@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, interval, fromEvent } from 'rxjs';
-import { concatMap, take } from 'rxjs/operators';
+import { concatMap, take, map } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -11,8 +13,9 @@ import { getStreamObj } from '../../utils';
 export class ConcatMapComponent {
   source1$: Observable<number> = interval(5000);
   source1: Stream = getStreamObj(this.source1$, `interval(5000)`);
-  source2$: Observable<number> = interval(1000).pipe(take(3));
-  source2: Stream = getStreamObj(this.source2$, `interval(1000)`);
+
+  source2$: Observable<number> = interval(1000).pipe(map(x => x + 'a'), take(3));
+  source2: Stream = getStreamObj(this.source2$, `interval(1000).pipe(take(3)`);
 
   result1: Stream = getStreamObj(
     this.source1$.pipe(concatMap(() => this.source2$)),

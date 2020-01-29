@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { interval } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -9,15 +11,24 @@ import { getStreamObj } from '../../utils';
   templateUrl: './share-replay.component.pug',
 })
 export class ShareReplayComponent {
-  constructor(private http$: HttpClient) {
-
+  constructor() {
   }
 
-  source1$ = this.http$.get<any>('https://yesno.wtf/api');
-  source1: Stream = getStreamObj(this.source1$, `this.http$.get('https://yesno.wtf/api')`);
+  source1$ = interval(1000).pipe(shareReplay());
+  source1: Stream = getStreamObj(this.source1$, `interval(1000).pipe(shareReplay())`);
 
-  source2$ = this.http$.get<any>('https://yesno.wtf/api')
-    .pipe(shareReplay(20));
+  result1: Stream = getStreamObj(
+    this.source1$,
+    `Подписываемся сразу`,
+    ``,
+    false,
+  );
 
-  source2: Stream = getStreamObj(this.source2$, `this.http$.get('https://yesno.wtf/api')`);
+  result2: Stream = getStreamObj(
+    this.source1$,
+    `Подписываемся через 4 секунды`,
+    ``,
+    false,
+    4000,
+  );
 }

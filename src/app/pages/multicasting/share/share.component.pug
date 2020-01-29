@@ -1,14 +1,10 @@
 p Разделение значений между несколькими подписчиками
-p share is like multicast with a Subject and refCount!
+p Share это вызов операторов publish и refCount, но только вызов будет состоять из одного оператора.
 
 .stream-block
-  p Source 1
+  p Исходный поток
   app-draw-stream([stream]="source1")
-  p Source 1
-  app-draw-stream([stream]="source1")
-
-.stream-block
-  p Source 2
-  app-draw-stream([stream]="source2")
-  p Source 2
-  app-draw-stream([stream]="source2")
+  p Результат 1
+  app-draw-stream([stream]="result1")
+  p Результат 2
+  app-draw-stream([stream]="result2")

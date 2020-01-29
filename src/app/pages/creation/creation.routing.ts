@@ -12,6 +12,7 @@ import { RangeComponent } from './range/range.component';
 import { AjaxComponent } from './ajax/ajax.component';
 import { GenerateComponent } from './generate/generate.component';
 import { ThrowErrorComponent } from './throw-error/throw-error.component';
+import { NEVERComponent } from './NEVER/NEVER.component';
 
 export const creationPagesRoutes: Route[] = [
   { path: 'interval', component: IntervalComponent },
@@ -26,4 +27,5 @@ export const creationPagesRoutes: Route[] = [
   { path: 'ajax', component: AjaxComponent },
   { path: 'generate', component: GenerateComponent },
   { path: 'throw-error', component: ThrowErrorComponent },
+  { path: 'NEVER', component: NEVERComponent },
 ];
