@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, interval } from 'rxjs';
 import { bufferCount } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -10,7 +12,8 @@ import { getStreamObj } from '../../utils';
 })
 export class BufferCountComponent {
   source1$: Observable<number> = interval(1000);
-  source1: Stream = getStreamObj(this.source1$, `interval(1000)`);
+
+  getStreamObj = getStreamObj;
 
   result1: Stream = getStreamObj(
     this.source1$.pipe(bufferCount(5)),
@@ -18,7 +21,7 @@ export class BufferCountComponent {
   );
 
   result2: Stream = getStreamObj(
-    this.source1$.pipe(bufferCount(5, 3)),
-    `interval(1000).pipe(bufferCount(5, 3))`
+    this.source1$.pipe(bufferCount(5, 1)),
+    `interval(1000).pipe(bufferCount(5, 1))`
   );
 }

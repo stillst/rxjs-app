@@ -1,9 +1,11 @@
-p Toggle on to catch emitted values from source, toggle off to emit buffered values as array.
+p Каждые 5 секунд будет начинаться новый буфер, собирать выстрелы 3 секунды и затем выстреливать массив
 
 .stream-block
-  p Source 1
-  app-draw-stream([stream]="source1")
-  p Source 2
-  app-draw-stream([stream]="source2")
-  p Result
+  p Поток 1
+  app-draw-stream([stream]="getStreamObj(source1$, 'interval(1000)')")
+  p Поток 2
+  app-draw-stream([stream]="getStreamObj(source2$, 'interval(5000)')")
+  p Поток 3
+  app-draw-stream([stream]="getStreamObj(source3$, 'interval(3000)')")
+  p Результат
   app-draw-stream([stream]="result1")

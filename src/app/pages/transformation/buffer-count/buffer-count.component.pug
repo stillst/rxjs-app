@@ -1,13 +1,13 @@
-p Collect emitted values until provided number is fulfilled, emit as array.
+p Собирает выстрелы потока, затем выстреливает массивом значений, второй аргумент указывает как часто повторять последние выстрелы
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source1")
-  p Result
+  p Поток 1
+  app-draw-stream([stream]="getStreamObj(source1$, 'interval(1000)')")
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source1")
-  p Result
+  p Поток 2
+  app-draw-stream([stream]="getStreamObj(source1$, 'interval(1000)')")
+  p Результат
   app-draw-stream([stream]="result2")

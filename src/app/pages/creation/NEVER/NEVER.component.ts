@@ -19,7 +19,11 @@ export class NEVERComponent implements OnInit {
 
   createStreams(): void {
     this.streams = [
-      getStreamObj(NEVER.pipe(startWith(7)), `NEVER.pipe(startWith(7))`, `Поток, который никогда не завершается`),
+      getStreamObj(
+        NEVER.pipe(startWith(7)),
+        `NEVER.pipe(startWith(7))`,
+        `Поток, который никогда не завершается`,
+      ),
     ];
   }
 }

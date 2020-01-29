@@ -1,9 +1,9 @@
-p Collect emitted values until provided number is fulfilled, emit as array.
+p Собирает выстрелы потоков заданное количество времени, затем стреляет массивом значений
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source1")
-  p Result 1
+  p Поток
+  app-draw-stream([stream]="getStreamObj(source1$, 'interval(1000)')")
+  p Результат 1
   app-draw-stream([stream]="result1")
-  p Result 1
+  p Результат 2
   app-draw-stream([stream]="result2")

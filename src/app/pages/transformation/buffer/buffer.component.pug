@@ -1,9 +1,9 @@
-p Collect output values until provided observable emits, emit as array.
+p Когда выстрелит второй поток, стреляет массивом из накопившихся значений первого
 
 .stream-block
-  p Source 1
-  app-draw-stream([stream]="source1")
-  p Source 2
-  app-draw-stream([stream]="source2")
-  p Result
+  p Поток 1
+  app-draw-stream([stream]="getStreamObj(source1$, 'interval(1000)')")
+  p Поток 2
+  app-draw-stream([stream]="getStreamObj(source2$, 'fromEvent(document, click)')")
+  p Результат
   app-draw-stream([stream]="result1")

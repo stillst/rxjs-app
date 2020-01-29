@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, interval } from 'rxjs';
 import { bufferToggle } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -11,18 +13,19 @@ import { getStreamObj } from '../../utils';
 export class BufferToggleComponent {
   source1$: Observable<number> = interval(1000);
   source2$: Observable<number> = interval(5000);
-  source1: Stream = getStreamObj(this.source1$, `interval(1000)`);
-  source2: Stream = getStreamObj(this.source2$, `interval(5000)`);
+  source3$: Observable<number> = interval(3000);
+
+  getStreamObj = getStreamObj;
 
   result1: Stream = getStreamObj(
     this.source1$.pipe(bufferToggle(
       this.source2$,
       val => {
         console.log(`Value ${val} emitted, starting buffer! Closing in 3s!`);
-        return interval(3000);
+        return this.source3$;
       }
     )),
-    `interval(1000).pipe(bufferToggle(3000))`
+    `interval(1000).pipe(bufferToggle(interval(5000), val => interval(3000)))`
   );
 
 }
