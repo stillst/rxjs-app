@@ -1,34 +1,34 @@
-p Subscribe to provided observable when previous completes, emit values.
-p concatMap() объединяет все сообщения нового потока с сообщениями потоков, с которыми уже работает. И перед запуском нового потока дожидается завершения предыдущего. Используется тогда, когда нам важен порядок обработки сообщений, и важно все эти сообщения получить.
+p Мапит поток на внутренний, выстреливает все значения в заданном порядке.
+p Дожидается завершения внутреннего потока, прежде чем стреляет новыми значенийми из-за выстрела внешнего потока
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source1")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source2")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source3")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source4")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result2")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source5")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source4")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result3")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source6")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source7")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result4")

@@ -1,35 +1,34 @@
-p Map to observable, emit values.
+p Мапит поток на внутренний, игнорирует новые выстрелы внешнего потока, пока не закончится внутренний.
 p exhaustMap() обрабатывает новый поток только тогда, когда он не занят другим потоком. То есть если в момент нового сообщения он уже работает с потоком, то новый поток будет проигнорирован и никогда не обработается.
 
-
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source1")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source2")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source3")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source4")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result2")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source5")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source4")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result3")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source6")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source7")
-  p Result 1
+  p Результат
   app-draw-stream([stream]="result4")

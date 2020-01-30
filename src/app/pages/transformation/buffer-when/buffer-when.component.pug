@@ -1,7 +1,7 @@
-p Collect all values until closing selector emits, emit buffered values.
+p Собирает все выстрелы потока, когда стреляет второй поток, выстреливает массивом значений
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source1")
-  p Result 1
+  p Поток
+  app-draw-stream([stream]="getStreamObj(this.source1$, 'interval(1000)')")
+  p Результат
   app-draw-stream([stream]="result1")
