@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+
 import { Observable, from } from 'rxjs';
-import { groupBy, mergeMap, toArray, reduce, map } from 'rxjs/operators';
+import {
+  groupBy, mergeMap, toArray, reduce, map, // tap
+} from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -21,18 +25,19 @@ export class GroupByComponent {
     { name: 'Frank', age: 25 },
     { name: 'Sarah', age: 35 }
   ])`);
-
   result1: Stream = getStreamObj(this.source1$.pipe(
       groupBy(person => person.age),
-      mergeMap(group => group.pipe(toArray()))
+      mergeMap(group => group.pipe(toArray())),
+      // tap(x => console.log('x', x)),
     ), `from([
     { name: 'Sue', age: 25 },
     { name: 'Joe', age: 30 },
     { name: 'Frank', age: 25 },
     { name: 'Sarah', age: 35 }
-  ])`);
-
-
+  ]).pipe(
+      groupBy(person => person.age),
+      mergeMap(group => group.pipe(toArray()))
+    )`);
 
   source2$ = from([
     { id: 1, name: 'javascript' },
@@ -41,7 +46,6 @@ export class GroupByComponent {
     { id: 1, name: 'typescript' },
     { id: 3, name: 'tslint' }
   ]);
-
   source2: Stream = getStreamObj(this.source2$, `
   from([
     { id: 1, name: 'javascript' },

@@ -1,6 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
+
 import { Observable, interval, fromEvent, of } from 'rxjs';
 import { debounceTime, pluck } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 

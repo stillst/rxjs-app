@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { fromEvent } from 'rxjs';
 import { windowTime, mergeAll } from 'rxjs/operators';
+
 import { getStreamObj } from '../../utils';
 
 @Component({

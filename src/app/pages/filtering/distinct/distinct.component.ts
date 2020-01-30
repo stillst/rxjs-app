@@ -10,8 +10,14 @@ import { getStreamObj } from '../../utils';
 })
 export class DistinctComponent {
   source1$: Observable<number> = of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1);
-  source1: Stream = getStreamObj(this.source1$, `of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1)`);
-  result1: Stream = getStreamObj(this.source1$.pipe(distinct()), `interval(500).pipe(debounceTime(1000))`);
+  source1: Stream = getStreamObj(
+    this.source1$,
+    `of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1)`,
+  );
+  result1: Stream = getStreamObj(
+    this.source1$.pipe(distinct()),
+    `of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1).pipe(distinct())`
+  );
 
   source2$: Observable<{age: number, name: string}> = of({ age: 4, name: 'Foo'}, { age: 7, name: 'Bar'}, { age: 5, name: 'Foo'});
   source2: Stream = getStreamObj(this.source2$, `of({ age: 4, name: 'Foo'}, { age: 7, name: 'Bar'}, { age: 5, name: 'Foo'})`);

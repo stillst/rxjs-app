@@ -1,7 +1,7 @@
-p Recursively call provided function.
+p Рекурсивно вызывает передаваемую функцию
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source1")
-  p Result
+  p Поток
+  app-draw-stream([stream]="getStreamObj(this.source1$, 'of(2)')")
+  p Результат
   app-draw-stream([stream]="result1")

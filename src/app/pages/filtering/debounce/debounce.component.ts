@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, of, timer, interval } from 'rxjs';
 import { debounce } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -9,12 +11,8 @@ import { getStreamObj } from '../../utils';
   templateUrl: './debounce.component.pug',
 })
 export class DebounceComponent {
-
   source1$: Observable<string> = of('WAIT', 'ONE', 'SECOND', 'Last will display');
   source1: Stream = getStreamObj(this.source1$, `of('WAIT', 'ONE', 'SECOND', 'Last will display')`);
-  source2$: Observable<number> = interval(1000);
-  source2: Stream = getStreamObj(this.source2$, `interval(1000)`);
-
   result1 = getStreamObj(
     this.source1$.pipe(debounce(() => timer(1000))),
     'interval(500).pipe(debounceTime(1000))',
@@ -22,6 +20,8 @@ export class DebounceComponent {
     output: 'Last will display`
   );
 
+  source2$: Observable<number> = interval(1000);
+  source2: Stream = getStreamObj(this.source2$, `interval(1000)`);
   result2 = getStreamObj(
     this.source2$.pipe(debounce((val: number) => timer(200 * val))),
     'interval(500).pipe(debounceTime(1000))',

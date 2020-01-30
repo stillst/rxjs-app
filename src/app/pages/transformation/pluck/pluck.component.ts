@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 import { Observable, fromEvent, from } from 'rxjs';
-import { pluck, tap, filter } from 'rxjs/operators';
+import { pluck, filter } from 'rxjs/operators';
 import { compose, not, isNil } from 'ramda';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -20,7 +22,6 @@ export class PluckComponent {
     { name: 'Frank', age: 20 },
     { name: 'Ryan', age: 50 }
   ]);`);
-
   result1: Stream = getStreamObj(
     this.source1$.pipe(pluck('name')),
     `from([
@@ -41,12 +42,10 @@ export class PluckComponent {
     { name: 'Joe', age: 30, job: { title: 'Developer', language: 'JavaScript' } },
     { name: 'Sarah', age: 35 }
   ]);
-
   source3: Stream = getStreamObj(this.source3$, `from([
     { name: 'Joe', age: 30, job: { title: 'Developer', language: 'JavaScript' } },
     { name: 'Sarah', age: 35 }
   ])`);
-
   result3: Stream = getStreamObj(
     this.source3$.pipe(pluck('job', 'title'), filter(compose(not, isNil))),
     `from([

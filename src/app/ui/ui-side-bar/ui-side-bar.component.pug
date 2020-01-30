@@ -6,43 +6,42 @@
   nav
     ul.page-list
       li.page-list__group
-        span.page-list__group-name creation
+        span.page-list__group-name Сreation
         ul.page-list__links
           li.page-list__link(*ngFor="let link of creationLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
-        span.page-list__group-name combination
+        span.page-list__group-name Сombination
         ul.page-list__links
           li.page-list__link(*ngFor="let link of combinationLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
         span.page-list__group-name Multicasting
         ul.page-list__links
           li.page-list__link(*ngFor="let link of multicastingLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
         span.page-list__group-name Tasks
         ul.page-list__links
           li.page-list__link(*ngFor="let link of tasksLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
-        span.page-list__group-name subjects
+        span.page-list__group-name Subjects
         ul.page-list__links
           li.page-list__link(*ngFor="let link of subjectsLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
-        span.page-list__group-name transformation
+        span.page-list__group-name Transformation
         ul.page-list__links
           li.page-list__link(*ngFor="let link of transformationLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
-        span.page-list__group-name filtering
+        span.page-list__group-name Filtering
         ul.page-list__links
           li.page-list__link(*ngFor="let link of filterLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
-
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}
       li.page-list__group
-        span.page-list__group-name conditional
+        span.page-list__group-name Conditional
         ul.page-list__links
           li.page-list__link(*ngFor="let link of conditionalLinks")
-            a(routerLink="{{ link }}" routerLinkActive="active") {{ link }}
+            a(routerLink="{{ link }}" routerLinkActive="active") {{ camelCase(link) }}

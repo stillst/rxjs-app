@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, from } from 'rxjs';
 import { partition } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
