@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { of, concat } from 'rxjs';
 import { every, delay, tap } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 

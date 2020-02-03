@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { Observable, interval, fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -18,7 +20,6 @@ export class ThrottleTimeComponent {
 
   source2$ = fromEvent(document, 'click');
   source2: Stream = getStreamObj(this.source2$, `fromEvent(document, 'click')`);
-
   result2: Stream = getStreamObj(
     this.source2$.pipe(throttleTime(2000)),
     `fromEvent(document, 'click').pipe(throttleTime(2000))`

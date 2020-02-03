@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { iif, of, interval, fromEvent } from 'rxjs';
 import { mergeMap, throttleTime, filter, map } from 'rxjs/operators';
+
 import { Stream } from '../../app.interface';
 import { getStreamObj } from '../../utils';
 
@@ -9,7 +11,6 @@ import { getStreamObj } from '../../utils';
   templateUrl: './iif.component.pug',
 })
 export class IifComponent {
-
   source1$ = interval(1000);
   result1$ = this.source1$.pipe(
     mergeMap(v =>

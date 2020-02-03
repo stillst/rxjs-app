@@ -1,19 +1,17 @@
-p Emit values until provided observable emits.
+p Выстреливает значениями потока не выстрелит переданный поток
 
 .stream-block
-  p Source
+  p Поток 1
   app-draw-stream([stream]="source1")
-  p Result
+  p Поток 2
+  app-draw-stream([stream]="source2")
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source
-  app-draw-stream([stream]="source2")
-  p Result
-  app-draw-stream([stream]="result2")
-
-.stream-block
-  p Source
+  p Поток 1
   app-draw-stream([stream]="source3")
-  p Result
-  app-draw-stream([stream]="result3")
+  p Поток 2
+  app-draw-stream([stream]="source2")
+  p Результат
+  app-draw-stream([stream]="result2")

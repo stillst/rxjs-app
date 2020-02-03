@@ -1,0 +1,11 @@
+p Когда все потоки завершаются выстреливает последним значеним каждого
+
+.stream-block
+  p Первый поток
+  app-draw-stream([stream]="source1")
+  p Второй поток
+  app-draw-stream([stream]="source2")
+  p Третий поток
+  app-draw-stream([stream]="source3")
+  p Результат
+  app-draw-stream([stream]="result1")
