@@ -1,17 +1,18 @@
-p Sample from source when provided observable emits.
+p Когда стреляет внутренний поток берет значение из внешнего (вроде)
+p Но не чаще чем значение изменится
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source1")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source2")
-  p Result
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source 1
+  p Поток 1
   app-draw-stream([stream]="source2")
-  p Source 2
+  p Поток 2
   app-draw-stream([stream]="source1")
-  p Result
+  p Результат
   app-draw-stream([stream]="result2")
