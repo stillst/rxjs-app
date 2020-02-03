@@ -1,19 +1,20 @@
-p Only emit when the current value is different than the last.
+p Выстреливает только если новое значение отличается от предыдущего
+p Объекты сравниваются по ссылке
 
 .stream-block
-  p Source
+  p Поток
   app-draw-stream([stream]="source1")
-  p Result
+  p Результат
   app-draw-stream([stream]="result1")
 
 .stream-block
-  p Source
+  p Поток
   app-draw-stream([stream]="source2")
-  p Result
+  p Результат
   app-draw-stream([stream]="result2")
 
 .stream-block
-  p Source
+  p Поток
   app-draw-stream([stream]="source3")
-  p Result
+  p Результат
   app-draw-stream([stream]="result3")
